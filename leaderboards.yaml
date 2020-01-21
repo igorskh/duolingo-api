@@ -54,12 +54,27 @@ definitions:
     properties:
       active:
         $ref: '#/definitions/Active'
+      num_sessions_remaining_to_unlock:
+        type: integer
+      tier:
+        type: integer
   Active:
     properties:
-      rankings:
-        type: array
-        items:
-          $ref: '#/definitions/Ranking'
+      cohort:
+        type: object
+        properties:
+          rankings:
+            type: array
+            items:
+              $ref: '#/definitions/Ranking'
+          tier:
+            type: integer
+      score:
+        type: number
+      user_id:
+        type: integer
+      complete:
+        type: boolean
   Ranking:
     properties:
       avatar_url: 
