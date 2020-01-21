@@ -22,6 +22,8 @@ security:
 paths:
   /leaderboards/{leaderboardID}/users/{userID}:
     get:
+      tags: ["Leaderboards"]
+      operationId: getLeaderboard
       summary: Returns user information when not logged in.
       description: User information when not logged in.
       parameters:
@@ -51,6 +53,7 @@ paths:
 
   /login:
     post:
+      tags: ["Login"]
       summary: Returns token in header.
       description: Login user
       parameters:
@@ -69,6 +72,8 @@ paths:
           description: Unexpected error
   /users:
     get:
+      tags: ["Users"]
+      operationId: getUsers
       summary: Returns user information when not logged in.
       description: User information when not logged in.
       parameters:
@@ -91,6 +96,8 @@ paths:
           description: Unexpected error
   /users/{userID}/subscriptions:
     get:
+      tags: ["Users"]
+      operationId: getSubscriptions
       summary: Returns user subscription list.
       description: User subscription.
       parameters:
