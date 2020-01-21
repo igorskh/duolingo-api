@@ -51,9 +51,9 @@ paths:
           description: User ID
       responses:
         200:
-          description: A User object.
+          description: A Users object.
           schema:
-            $ref: '#/definitions/User'
+            $ref: '#/definitions/UserList'
         400:
           description: The specified user ID is invalid (e.g. not a number).
         404:
@@ -62,6 +62,12 @@ paths:
           description: Unexpected error
 
 definitions:
+  UserList:
+    properties:
+      users:
+          type: array
+          items:
+            $ref: '#/definitions/User'
   LoginData:
     properties:
       distinctId:
@@ -82,6 +88,8 @@ definitions:
         type: integer
       name:
         type: string
+      monthlyXp:
+        type: integer
       streak:
         type: integer
       motivation:
@@ -101,9 +109,7 @@ definitions:
       _achievements:
         type: array
         items:
-          type: array
-          items:
-            $ref: '#/definitions/Achievement'
+          $ref: '#/definitions/Achievement'
       location:
         type: string
       username:
@@ -115,9 +121,7 @@ definitions:
       optionalFeatures:
         type: array
         items:
-          type: array
-          items:
-            $ref: '#/definitions/OptionalFeature'
+          $ref: '#/definitions/OptionalFeature'
       currentCourseId:
         type: string
       hasPhoneNumber:
@@ -129,17 +133,17 @@ definitions:
       roles:
         type: array
         items:
-          type: array
-          items:
-            type: string
+          type: string
       emailVerified:
         type: boolean
       courses:
         type: array
         items:
-          type: array
-          items:
-            $ref: '#/definitions/Course'
+          $ref: '#/definitions/Course'
+      xpGains:
+        type: array
+        items:
+          $ref: '#/definitions/XpGain'
     required:  
       - id
       - name
@@ -152,9 +156,7 @@ definitions:
       tierCounts:
         type: array
         items:
-          type: array
-          items:
-            type: integer
+          type: integer
       name:
         type: string
       shouldShowUnlock:
@@ -186,4 +188,14 @@ definitions:
       fromLanguage:
         type: string
       crowns:
+        type: integer
+  XpGain:
+    properties:
+      eventType:
+        type: string
+      xp:
+        type: integer
+      skillId:
+        type: string
+      time:
         type: integer
