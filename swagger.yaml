@@ -13,11 +13,11 @@ produces:
   - application/json
 
 securityDefinitions:
-  BasicAuth:
+  BearerAuth:
     type: basic
 
 security:
-  - BasicAuth: []
+  - BearerAuth: []
 
 paths:
   /login:
@@ -48,7 +48,7 @@ paths:
           required: true
           type: string
           minimum: 1
-          description: User ID
+          description: User Name
       responses:
         200:
           description: A Users object.
@@ -60,11 +60,40 @@ paths:
           description: A user with the specified ID was not found.
         default:
           description: Unexpected error
+  /users/{userID}/subscriptions:
+    get:
+      summary: Returns user subscription list.
+      description: User subscription.
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          type: integer
+          minimum: 1
+          description: UserID
+      responses:
+        200:
+          description: A Users object.
+          schema:
+            $ref: '#/definitions/SubscriptionList'
+        400:
+          description: The specified user ID is invalid (e.g. not a number).
+        404:
+          description: A user with the specified ID was not found.
+        default:
+          description: Unexpected error
+    
 
 definitions:
   UserList:
     properties:
       users:
+          type: array
+          items:
+            $ref: '#/definitions/User'
+  SubscriptionList:
+    properties:
+      subscriptions:
           type: array
           items:
             $ref: '#/definitions/User'
@@ -100,6 +129,8 @@ definitions:
         type: string
       hasFacebookId:
         type: boolean
+      facebookId:
+        type: string
       inviteURL:
         type: string
       canUseModerationTools:
@@ -122,6 +153,8 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/OptionalFeature'
+      currentCourse:
+        $ref: '#/definitions/CurrentCourse'
       currentCourseId:
         type: string
       hasPhoneNumber:
@@ -144,9 +177,144 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/XpGain'
-    required:  
-      - id
-      - name
+      enableSpeaker:
+        type: boolean
+      deactivated:
+        type: boolean
+      emailEditSuggested:
+        type: boolean
+      emailStreakFreezeUsed:
+        type: boolean
+      gems:
+        type: integer
+      pushEditSuggested:
+        type: boolean
+      pushAnnouncement:
+        type: boolean
+      totalXp:
+        type: integer
+      enableMicrophone:
+        type: boolean
+      insiteImmersionLingots:
+        type: boolean
+      pushPromotion:
+        type: boolean
+      emailStreakSaver: 
+        type: boolean
+      insiteSentenceEdited:
+        type: boolean
+      canCreatePearsonClassroom:
+        type: boolean
+      xpGoal:
+        type: integer
+      email:
+        type: string
+      timezone:
+        type: string
+      timezoneOffset:
+        type: string
+      coachOutfit:
+        type: string
+      weeklyXp:
+        type: integer
+      lingots:
+        type: integer
+      googleId:
+        type: string
+      countryCode:
+        type: string
+      streakData:
+        $ref: '#/definitions/StreakData'
+      referralInfo:
+        $ref: '#/definitions/ReferralInfo'
+      pushStreamPost:
+        type: boolean
+      adsEnabled:
+        type: boolean
+      emailAnnouncement:
+        type: boolean
+      xpGoalMetToday:
+        type: boolean
+      pushLeaderboards:
+        type: boolean
+      zapsRemaining:
+        type: integer
+      emailSchoolsAnnouncement:
+        type: boolean
+      emailWeeklyProgressReport:
+        type: boolean
+      emailWeeklyReport:
+        type: boolean
+      pushComment:
+        type: boolean
+      pushFollow:
+        type: boolean
+      pushClubs:
+        type: boolean
+      pushStreakSaver:
+        type: boolean
+      emailClassroomJoin:
+        type: boolean
+      emailAssignment:
+        type: boolean
+      emailAssignmentComplete:
+        type: boolean
+      lastStreak:
+        $ref: '#/definitions/LastStreak'
+      shopItems:
+        type: array
+        items:
+          $ref: '#/definitions/ShopItem'
+  ShopItem:
+    properties:
+      purchaseId:
+        type: string
+      purchaseDate:
+        type: integer
+      itemName:
+        type: string
+      id:
+        type: string
+      purchasePrice:
+        type: integer
+  LastStreak:
+    properties:
+      isAvailableForRepair:
+        type: boolean
+      googlePlayProductId:
+        type: string
+      googlePlayDevPayload:
+        type: string
+      length:
+        type: integer
+      daysAgo:
+        type: integer
+      lastReachedGoal:
+        type: integer
+      shortenedProductId:
+        type: string
+  ReferralInfo:
+    properties:
+      inviterName:
+        type: string
+      unconsumedInviteeName:
+        type: string
+      numBonusesReady:
+        type: integer
+      hasReachedCap:
+        type: boolean
+      isEligibleForBonus:
+        type: boolean
+  StreakData:
+    properties:
+      length:
+        type: integer
+      updatedTimeZone:
+        type: string
+      xpGoal:
+        type: integer
+      updatedTimestamp:
+        type: integer
   Achievement:
     properties:
       tier:
@@ -167,6 +335,99 @@ definitions:
         type: string
       status:
         type: string
+  CurrentCourse:
+    properties:
+      status:
+        type: string
+      learningLanguage: 
+        type: string
+      healthEnabled: 
+        type: boolean
+      xp: 
+        type: integer
+      wordsLearned: 
+        type: integer
+      id: 
+        type: string
+      fromLanguage: 
+        type: string
+      title: 
+        type: string
+      smartTips:
+        type: array
+        items:
+          $ref: '#/definitions/SmartTip' 
+      trackingProperties:
+        $ref: '#/definitions/TrackingProperties' 
+      crowns:
+        type: integer
+      progressQuizHistory:
+        type: array
+        items:
+          $ref: '#/definitions/ProgressQuizItem'
+      sections:
+        type: array
+        items:
+          $ref: '#/definitions/CourseSection'
+  CourseSection:
+    properties: 
+      numRows:
+        type: integer
+      checkpointFinished:
+        type: boolean
+      checkpointAccessible:
+        type: boolean
+      name:
+        type: string
+      summary:
+        type: string
+      preload:
+        type: boolean
+      extraCrowns:
+        type: integer
+      placementTestAvailable:
+        type: boolean
+      authorId:
+        type: string
+      progressVersion:
+        type: integer
+  ProgressQuizItem:
+    properties:
+      endTime:
+        type: integer
+      score:
+        type: number
+      startTime:
+        type: integer
+  TrackingProperties:
+    properties:
+      direction:
+        type: string
+      total_crowns:
+        type: integer
+      took_placementtest:
+        type: boolean
+      learning_language:
+        type: string
+      gold_skill_count:
+        type: integer
+      gold_tree_percent:
+        type: number
+      num_skills_newly_decayed:
+        type: integer
+      num_skills_decayed:
+        type: integer
+      ui_language:
+        type: string
+      max_tree_level:
+        type: integer
+  SmartTip:
+    properties:
+      url:
+        type: string
+      smartTipId:
+        type: string
+
   Course:
     properties:
       id:
