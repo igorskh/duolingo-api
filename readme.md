@@ -1,4 +1,4 @@
-# Duolingo Unofficial API
+# Duolingo Unofficial API Definition
 
 Work in progress.
 
