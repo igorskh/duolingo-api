@@ -1,0 +1,189 @@
+swagger: "2.0"
+info:
+  title: Duolingo Unofficial API
+  description: Unofficial API description for Duolingo.
+  version: 1.0.0
+host: www.duolingo.com
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+securityDefinitions:
+  BasicAuth:
+    type: basic
+
+security:
+  - BasicAuth: []
+
+paths:
+  /login:
+    post:
+      summary: Returns token in header.
+      description: Login user
+      parameters:
+        - in: body
+          name: username
+          schema:
+            $ref: '#/definitions/LoginData'
+      responses:
+        200:
+          description: Login successful
+        400:
+          description: Invalid data
+        403:
+          description: Login failed
+        default:
+          description: Unexpected error
+  /users:
+    get:
+      summary: Returns user information when not logged in.
+      description: User information when not logged in.
+      parameters:
+        - in: query
+          name: username
+          required: true
+          type: string
+          minimum: 1
+          description: User ID
+      responses:
+        200:
+          description: A User object.
+          schema:
+            $ref: '#/definitions/User'
+        400:
+          description: The specified user ID is invalid (e.g. not a number).
+        404:
+          description: A user with the specified ID was not found.
+        default:
+          description: Unexpected error
+
+definitions:
+  LoginData:
+    properties:
+      distinctId:
+        type: string
+      identifier:
+        type: string
+      password:
+        type: string
+      password:
+        type: string
+      landingUrl:
+        type: string
+      lastReferrer:
+        type: string
+  User:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      streak:
+        type: integer
+      motivation:
+        type: string
+      picture:
+        type: string
+      learningLanguage:
+        type: string
+      hasFacebookId:
+        type: boolean
+      inviteURL:
+        type: string
+      canUseModerationTools:
+        type: boolean
+      fromLanguage:
+        type: string
+      _achievements:
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/Achievement'
+      location:
+        type: string
+      username:
+        type: string
+      bio:
+        type: string
+      hasGoogleId:
+        type: boolean
+      optionalFeatures:
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/OptionalFeature'
+      currentCourseId:
+        type: string
+      hasPhoneNumber:
+        type: boolean
+      creationDate:
+        type: integer
+      hasPlus:
+        type: boolean
+      roles:
+        type: array
+        items:
+          type: array
+          items:
+            type: string
+      emailVerified:
+        type: boolean
+      courses:
+        type: array
+        items:
+          type: array
+          items:
+            $ref: '#/definitions/Course'
+    required:  
+      - id
+      - name
+  Achievement:
+    properties:
+      tier:
+        type: integer
+      count:
+        type: integer
+      tierCounts:
+        type: array
+        items:
+          type: array
+          items:
+            type: integer
+      name:
+        type: string
+      shouldShowUnlock:
+        type: boolean
+  OptionalFeature:
+    properties:
+      id:
+        type: string
+      status:
+        type: string
+  Course:
+    properties:
+      id:
+        type: string
+      preload:
+        type: boolean
+      placementTestAvailable:
+        type: boolean
+      authorId:
+        type: string
+      title:
+        type: string
+      learningLanguage:
+        type: string
+      xp:
+        type: integer
+      healthEnabled:
+        type: boolean
+      fromLanguage:
+        type: string
+      crowns:
+        type: integer
