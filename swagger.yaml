@@ -105,8 +105,6 @@ definitions:
         type: string
       password:
         type: string
-      password:
-        type: string
       landingUrl:
         type: string
       lastReferrer:
@@ -427,7 +425,6 @@ definitions:
         type: string
       smartTipId:
         type: string
-
   Course:
     properties:
       id:
