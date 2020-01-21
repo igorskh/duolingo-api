@@ -20,6 +20,35 @@ security:
   - BearerAuth: []
 
 paths:
+  /leaderboards/{leaderboardID}/users/{userID}:
+    get:
+      summary: Returns user information when not logged in.
+      description: User information when not logged in.
+      parameters:
+        - in: path
+          name: leaderboardID
+          required: true
+          type: string
+          minimum: 1
+          description: LeaderboardID
+        - in: path
+          name: userID
+          required: true
+          type: string
+          minimum: 1
+          description: UserID
+      responses:
+        200:
+          description: A Users object.
+          schema:
+            $ref: '#/definitions/Leaderdoard'
+        400:
+          description: The specified user ID or leaderboard ID is invalid (e.g. not a number).
+        404:
+          description: A user with the specified ID was not found.
+        default:
+          description: Unexpected error
+
   /login:
     post:
       summary: Returns token in header.
@@ -456,4 +485,41 @@ definitions:
       skillId:
         type: string
       time:
+        type: integer
+  Leaderdoard:
+    properties:
+      active:
+        $ref: '#/definitions/LeaderdoardActive'
+      num_sessions_remaining_to_unlock:
+        type: integer
+      tier:
+        type: integer
+  LeaderdoardActive:
+    properties:
+      cohort:
+        type: object
+        properties:
+          rankings:
+            type: array
+            items:
+              $ref: '#/definitions/LeaderdoardRanking'
+          tier:
+            type: integer
+      score:
+        type: number
+      user_id:
+        type: integer
+      complete:
+        type: boolean
+  LeaderdoardRanking:
+    properties:
+      avatar_url: 
+        type: string
+      display_name:
+        type: string
+      score:
+        type: number
+      streak_extended_today:
+        type: boolean
+      user_id:
         type: integer
