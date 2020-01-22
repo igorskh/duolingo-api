@@ -36,7 +36,7 @@ paths:
         - in: path
           name: userID
           required: true
-          type: string
+          type: integer
           minimum: 1
           description: UserID
       responses:
@@ -70,6 +70,38 @@ paths:
           description: Login failed
         default:
           description: Unexpected error
+
+  /users/{userID}:
+    get:
+      tags: ["Users"]
+      operationId: getUser
+      summary: Returns user information.
+      description: User information.
+      parameters:
+        - in: path
+          name: userID
+          required: true
+          type: integer
+          minimum: 1
+          description: User ID
+        - in: query
+          name: fields
+          type: array
+          items:
+            type: string
+          description: Fields to retrieve
+      responses:
+        200:
+          description: A User object.
+          schema:
+            $ref: '#/definitions/User'
+        400:
+          description: The specified user ID is invalid (e.g. not a number).
+        404:
+          description: A user with the specified ID was not found.
+        default:
+          description: Unexpected error
+
   /users:
     get:
       tags: ["Users"]
@@ -118,7 +150,6 @@ paths:
           description: A user with the specified ID was not found.
         default:
           description: Unexpected error
-    
 
 definitions:
   UserList:
@@ -299,6 +330,24 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ShopItem'
+      health:
+        $ref: '#/definitions/Health'
+  Health:
+    properties: 
+      maxHearts:
+        type: integer
+      healthEnabled:
+        type: boolean
+      eligibleForFreeRefill:
+        type: boolean
+      secondsPerHeartSegment:
+        type: integer
+      hearts:
+        type: integer
+      useHealth:
+        type: boolean
+      secondsUntilNextHeartSegment:
+        type: integer
   ShopItem:
     properties:
       purchaseId:
