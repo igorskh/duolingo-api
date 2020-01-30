@@ -141,9 +141,41 @@ paths:
           description: UserID
       responses:
         200:
-          description: A Users object.
+          description: A Users SubscriptionList object.
           schema:
             $ref: '#/definitions/SubscriptionList'
+        400:
+          description: The specified user ID is invalid (e.g. not a number).
+        404:
+          description: A user with the specified ID was not found.
+        default:
+          description: Unexpected error
+  /users/{userID}/xp_summaries:
+    get:
+      tags: ["Users"]
+      operationId: getXpSummaries
+      summary: Returns user XP summaries
+      description: User summaries.
+      parameters:
+        - in: query
+          name: timezone
+          required: true
+          type: string
+          minimum: 1
+          description: Time zone
+        - in: path
+          name: userID
+          required: true
+          type: integer
+          minimum: 1
+          description: UserID
+      responses:
+        200:
+          description: A Users summaries object.
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/XpSummary'
         400:
           description: The specified user ID is invalid (e.g. not a number).
         404:
@@ -578,4 +610,20 @@ definitions:
       streak_extended_today:
         type: boolean
       user_id:
+        type: integer
+  XpSummary:
+    properties:
+      gainedXp: 
+        type: integer
+      frozen: 
+        type: boolean
+      streakExtended: 
+        type: boolean
+      userId: 
+        type: integer
+      dailyGoalXp:
+        type: integer
+      date: 
+        type: integer
+      repaired:
         type: integer
