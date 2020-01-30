@@ -173,9 +173,12 @@ paths:
         200:
           description: A Users summaries object.
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/XpSummary'
+            type: object
+            properties:
+              summaries:
+                type: array
+                items:
+                  $ref: '#/definitions/XpSummary'
         400:
           description: The specified user ID is invalid (e.g. not a number).
         404:
@@ -626,4 +629,4 @@ definitions:
       date: 
         type: integer
       repaired:
-        type: integer
+        type: boolean
