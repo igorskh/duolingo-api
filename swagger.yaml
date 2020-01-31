@@ -6,6 +6,7 @@ info:
 host: www.duolingo.com
 basePath: /
 schemes:
+  - http
   - https
 consumes:
   - application/json
@@ -111,7 +112,6 @@ paths:
       operationId: getUsers
       summary: Returns user information when not logged in.
       description: User information when not logged in.
-      security: [] 
       parameters:
         - in: query
           name: username
