@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "npx redoc-cli bundle swagger.yaml"
+        "build": "npx redoc-cli bundle swagger.yaml && mkdir public && mv redoc-static.html public/index.html"
     },
     "repository": {
         "type": "git",
