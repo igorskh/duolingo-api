@@ -4,7 +4,7 @@
     "description": "Unofficial Duolingo API Definition",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "npx swagger validate swagger.yaml",
         "build": "npx redoc-cli bundle swagger.yaml && mkdir public && mv redoc-static.html public/index.html"
     },
     "repository": {
@@ -12,9 +12,10 @@
         "url": "git@github.com:igorskh/duolingo-api.git"
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "homepage": "https://github.com/igorskh/duolingo-api",
     "dependencies": {
-        "redoc": "^2.0.0-rc.1"
+        "redoc": "^2.0.0-rc.1",
+        "swagger-cli": "^3.0.1"
     }
 }
