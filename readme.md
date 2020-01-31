@@ -33,5 +33,12 @@ Generate interactive documentation:
 npx redoc-cli bundle swagger.yaml
 ```
 
+## Mock Server with Prism
+For mocking purpose [Prism](https://stoplight.io/open-source/prism/) is used.
+
+```
+npx prism mock swagger.yaml
+```
+
 ## Implementations
 * [Golang](https://github.com/igorskh/go-duolingo)
