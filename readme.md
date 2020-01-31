@@ -32,3 +32,6 @@ Generate interactive documentation:
 ```bash
 npx redoc-cli bundle swagger.yaml
 ```
+
+## Implementations
+* [Golang](https://github.com/igorskh/go-duolingo)
