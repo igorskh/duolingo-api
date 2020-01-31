@@ -9,3 +9,10 @@ Unofficial OpenAPI 2.0 (aka Swagger) definition for Duolingo API.
 ```bash
 npx redoc-cli bundle swagger.yaml
 ```
+
+## Mock Server with Prism
+For mocking purpose [Prism](https://stoplight.io/open-source/prism/) is used.
+
+```
+npx prism mock swagger.yaml
+```

@@ -15,6 +15,7 @@
     "license": "MIT",
     "homepage": "https://github.com/igorskh/duolingo-api",
     "dependencies": {
+        "@stoplight/prism-cli": "^3.2.5",
         "redoc": "^2.0.0-rc.1",
         "swagger-cli": "^3.0.1"
     }
