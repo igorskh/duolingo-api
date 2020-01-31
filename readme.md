@@ -28,7 +28,7 @@ swagger generate server -f ./duolingo-api/swagger.yaml
 
 See more documentation on [https://goswagger.io](https://goswagger.io).
 
-## Generate Redoc docs
+Generate interactive documentation:
 ```bash
 npx redoc-cli bundle swagger.yaml
 ```
