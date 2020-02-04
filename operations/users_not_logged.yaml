@@ -14,7 +14,7 @@ get:
     200:
       description: A Users object.
       schema:
-        $ref: "../definitions/index.yaml#/definitions/UserList"
+        $ref: "./definitions/index.yaml#/definitions/UserList"
     400:
       description: The specified user ID is invalid (e.g. not a number).
     404:

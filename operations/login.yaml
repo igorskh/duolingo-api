@@ -7,7 +7,7 @@ post:
     - in: body
       name: username
       schema:
-        $ref: "../definitions/index.yaml#/definitions/LoginData"
+        $ref: "./definitions/index.yaml#/definitions/LoginData"
   responses:
     200:
       description: Login successful

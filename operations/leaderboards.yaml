@@ -20,7 +20,7 @@ get:
     200:
       description: A Users object.
       schema:
-        $ref: "../definitions/leaderboard.yaml#/definitions/Leaderdoard"
+        $ref: "./definitions/leaderboard.yaml#/definitions/Leaderdoard"
     400:
       description: The specified user ID or leaderboard ID is invalid (e.g. not a number).
     404:

@@ -20,7 +20,7 @@ get:
     200:
       description: A User object.
       schema:
-        $ref: "../definitions/user.yaml#/definitions/User"
+        $ref: "./definitions/user.yaml#/definitions/User"
     400:
       description: The specified user ID is invalid (e.g. not a number).
     404:

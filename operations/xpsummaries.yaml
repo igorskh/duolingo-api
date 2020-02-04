@@ -25,7 +25,7 @@ get:
           summaries:
             type: array
             items:
-              $ref: "../definitions/xp.yaml#/definitions/XpSummary"
+              $ref: "./definitions/xp.yaml#/definitions/XpSummary"
     400:
       description: The specified user ID is invalid (e.g. not a number).
     404:

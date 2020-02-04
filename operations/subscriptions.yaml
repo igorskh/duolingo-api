@@ -14,7 +14,7 @@ get:
     200:
       description: A Users SubscriptionList object.
       schema:
-        $ref: "../definitions/index.yaml#/definitions/SubscriptionList"
+        $ref: "./definitions/index.yaml#/definitions/SubscriptionList"
     400:
       description: The specified user ID is invalid (e.g. not a number).
     404:
