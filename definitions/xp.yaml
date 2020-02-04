@@ -1,0 +1,27 @@
+definitions:
+  XpGain:
+    properties:
+      eventType:
+        type: string
+      xp:
+        type: integer
+      skillId:
+        type: string
+      time:
+        type: integer
+  XpSummary:
+    properties:
+      gainedXp: 
+        type: integer
+      frozen: 
+        type: boolean
+      streakExtended: 
+        type: boolean
+      userId: 
+        type: integer
+      dailyGoalXp:
+        type: integer
+      date: 
+        type: integer
+      repaired:
+        type: boolean

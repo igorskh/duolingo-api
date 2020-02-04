@@ -30,14 +30,16 @@ See more documentation on [https://goswagger.io](https://goswagger.io).
 
 Generate interactive documentation:
 ```bash
-npx redoc-cli bundle swagger.yaml
+npx swagger-merger -i swagger.yaml -o swagger-complete.yaml
+npx redoc-cli bundle swagger-complete.yaml
 ```
 
 ## Mock Server with Prism
 For mocking purpose [Prism](https://stoplight.io/open-source/prism/) is used.
 
 ```
-npx prism mock swagger.yaml
+npx swagger-merger -i swagger.yaml -o swagger-complete.yaml
+npx prism mock swagger-complete.yaml
 ```
 
 ## Implementations

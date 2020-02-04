@@ -1,0 +1,34 @@
+get:
+  tags: ["Users"]
+  operationId: getXpSummaries
+  summary: Returns user XP summaries
+  description: User summaries.
+  parameters:
+    - in: query
+      name: timezone
+      required: true
+      type: string
+      minimum: 1
+      description: Time zone
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A Users summaries object.
+      schema:
+        type: object
+        properties:
+          summaries:
+            type: array
+            items:
+              $ref: "./definitions/xp.yaml#/definitions/XpSummary"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

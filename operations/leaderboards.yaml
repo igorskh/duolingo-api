@@ -1,0 +1,29 @@
+get:
+  tags: ["Leaderboards"]
+  operationId: getLeaderboard
+  summary: Returns user information when not logged in.
+  description: User information when not logged in.
+  parameters:
+    - in: path
+      name: leaderboardID
+      required: true
+      type: string
+      minimum: 1
+      description: LeaderboardID
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A Users object.
+      schema:
+        $ref: "./definitions/leaderboard.yaml#/definitions/Leaderdoard"
+    400:
+      description: The specified user ID or leaderboard ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

@@ -1,0 +1,79 @@
+definitions:
+  CurrentCourse:
+    properties:
+      status:
+        type: string
+      learningLanguage:
+        type: string
+      healthEnabled:
+        type: boolean
+      xp:
+        type: integer
+      wordsLearned:
+        type: integer
+      id:
+        type: string
+      fromLanguage:
+        type: string
+      title:
+        type: string
+      smartTips:
+        type: array
+        items:
+          $ref: "./misc.yaml#/definitions/SmartTip"
+      trackingProperties:
+        $ref: "./misc.yaml#/definitions/TrackingProperties"
+      crowns:
+        type: integer
+      progressQuizHistory:
+        type: array
+        items:
+          $ref: "./misc.yaml#/definitions/ProgressQuizItem"
+      sections:
+        type: array
+        items:
+          $ref: "#/definitions/CourseSection"
+  CourseSection:
+    properties:
+      numRows:
+        type: integer
+      checkpointFinished:
+        type: boolean
+      checkpointAccessible:
+        type: boolean
+      name:
+        type: string
+      summary:
+        type: string
+      preload:
+        type: boolean
+      extraCrowns:
+        type: integer
+      placementTestAvailable:
+        type: boolean
+      authorId:
+        type: string
+      progressVersion:
+        type: integer
+  Course:
+    properties:
+      id:
+        type: string
+      preload:
+        type: boolean
+      placementTestAvailable:
+        type: boolean
+      authorId:
+        type: string
+      title:
+        type: string
+      learningLanguage:
+        type: string
+      xp:
+        type: integer
+      healthEnabled:
+        type: boolean
+      fromLanguage:
+        type: string
+      crowns:
+        type: integer

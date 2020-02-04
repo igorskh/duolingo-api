@@ -1,0 +1,23 @@
+get:
+  tags: ["Users"]
+  operationId: getUsers
+  summary: Returns user information when not logged in.
+  description: User information when not logged in.
+  parameters:
+    - in: query
+      name: username
+      required: true
+      type: string
+      minimum: 1
+      description: User Name
+  responses:
+    200:
+      description: A Users object.
+      schema:
+        $ref: "./definitions/index.yaml#/definitions/UserList"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

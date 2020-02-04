@@ -5,7 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "npx swagger validate swagger.yaml",
-        "build": "npx redoc-cli bundle swagger.yaml && mkdir public && mv redoc-static.html public/index.html"
+        "merge": "npx swagger-merger -i swagger.yaml -o swagger-complete.yaml",
+        "redoc": "npx redoc-cli bundle swagger-complete.yaml && mkdir -p public && mv redoc-static.html public/index.html",
+        "mock": "npx prism mock swagger-complete.yaml",
+        "build": "npm run-script merge && npm run-script redoc"
     },
     "repository": {
         "type": "git",
@@ -17,6 +20,7 @@
     "dependencies": {
         "@stoplight/prism-cli": "^3.2.5",
         "redoc": "^2.0.0-rc.1",
-        "swagger-cli": "^3.0.1"
+        "swagger-cli": "^3.0.1",
+        "swagger-merger": "^1.4.3"
     }
 }

@@ -1,0 +1,157 @@
+definitions:
+  User:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+      monthlyXp:
+        type: integer
+      streak:
+        type: integer
+      motivation:
+        type: string
+      picture:
+        type: string
+      learningLanguage:
+        type: string
+      hasFacebookId:
+        type: boolean
+      facebookId:
+        type: string
+      inviteURL:
+        type: string
+      canUseModerationTools:
+        type: boolean
+      fromLanguage:
+        type: string
+      _achievements:
+        type: array
+        items:
+          $ref: './misc.yaml#/definitions/Achievement'
+      location:
+        type: string
+      username:
+        type: string
+      bio:
+        type: string
+      hasGoogleId:
+        type: boolean
+      optionalFeatures:
+        type: array
+        items:
+          $ref: './misc.yaml#/definitions/OptionalFeature'
+      currentCourse:
+        $ref: './courses.yaml#/definitions/CurrentCourse'
+      currentCourseId:
+        type: string
+      hasPhoneNumber:
+        type: boolean
+      creationDate:
+        type: integer
+      hasPlus:
+        type: boolean
+      roles:
+        type: array
+        items:
+          type: string
+      emailVerified:
+        type: boolean
+      courses:
+        type: array
+        items:
+          $ref: './courses.yaml#/definitions/Course'
+      xpGains:
+        type: array
+        items:
+          $ref: './xp.yaml#/definitions/XpGain'
+      enableSpeaker:
+        type: boolean
+      deactivated:
+        type: boolean
+      emailEditSuggested:
+        type: boolean
+      emailStreakFreezeUsed:
+        type: boolean
+      gems:
+        type: integer
+      pushEditSuggested:
+        type: boolean
+      pushAnnouncement:
+        type: boolean
+      totalXp:
+        type: integer
+      enableMicrophone:
+        type: boolean
+      insiteImmersionLingots:
+        type: boolean
+      pushPromotion:
+        type: boolean
+      emailStreakSaver: 
+        type: boolean
+      insiteSentenceEdited:
+        type: boolean
+      canCreatePearsonClassroom:
+        type: boolean
+      xpGoal:
+        type: integer
+      email:
+        type: string
+      timezone:
+        type: string
+      timezoneOffset:
+        type: string
+      coachOutfit:
+        type: string
+      weeklyXp:
+        type: integer
+      lingots:
+        type: integer
+      googleId:
+        type: string
+      countryCode:
+        type: string
+      streakData:
+        $ref: './misc.yaml#/definitions/StreakData'
+      referralInfo:
+        $ref: './misc.yaml#/definitions/ReferralInfo'
+      pushStreamPost:
+        type: boolean
+      adsEnabled:
+        type: boolean
+      emailAnnouncement:
+        type: boolean
+      xpGoalMetToday:
+        type: boolean
+      pushLeaderboards:
+        type: boolean
+      zapsRemaining:
+        type: integer
+      emailSchoolsAnnouncement:
+        type: boolean
+      emailWeeklyProgressReport:
+        type: boolean
+      emailWeeklyReport:
+        type: boolean
+      pushComment:
+        type: boolean
+      pushFollow:
+        type: boolean
+      pushClubs:
+        type: boolean
+      pushStreakSaver:
+        type: boolean
+      emailClassroomJoin:
+        type: boolean
+      emailAssignment:
+        type: boolean
+      emailAssignmentComplete:
+        type: boolean
+      lastStreak:
+        $ref: './misc.yaml#/definitions/LastStreak'
+      shopItems:
+        type: array
+        items:
+          $ref: './misc.yaml#/definitions/ShopItem'
+      health:
+        $ref: './misc.yaml#/definitions/Health'
