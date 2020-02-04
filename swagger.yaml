@@ -24,168 +24,19 @@ security:
 
 paths:
   /leaderboards/{leaderboardID}/users/{userID}:
-    get:
-      tags: ["Leaderboards"]
-      operationId: getLeaderboard
-      summary: Returns user information when not logged in.
-      description: User information when not logged in.
-      parameters:
-        - in: path
-          name: leaderboardID
-          required: true
-          type: string
-          minimum: 1
-          description: LeaderboardID
-        - in: path
-          name: userID
-          required: true
-          type: integer
-          minimum: 1
-          description: UserID
-      responses:
-        200:
-          description: A Users object.
-          schema:
-            $ref: './definitions/leaderboard.yaml#/definitions/Leaderdoard'
-        400:
-          description: The specified user ID or leaderboard ID is invalid (e.g. not a number).
-        404:
-          description: A user with the specified ID was not found.
-        default:
-          description: Unexpected error
+    $ref: "./operations/leaderboards.yaml"
 
   /login:
-    post:
-      tags: ["Login"]
-      summary: Returns token in header.
-      description: Login user
-      security: [] 
-      parameters:
-        - in: body
-          name: username
-          schema:
-            $ref: './definitions/index.yaml#/definitions/LoginData'
-      responses:
-        200:
-          description: Login successful
-        400:
-          description: Invalid data
-        403:
-          description: Login failed
-        default:
-          description: Unexpected error
+    $ref: "./operations/login.yaml"
 
   /users/{userID}:
-    get:
-      tags: ["Users"]
-      operationId: getUser
-      summary: Returns user information.
-      description: User information.
-      parameters:
-        - in: path
-          name: userID
-          required: true
-          type: integer
-          minimum: 1
-          description: User ID
-        - in: query
-          name: fields
-          type: array
-          items:
-            type: string
-          description: Fields to retrieve
-      responses:
-        200:
-          description: A User object.
-          schema:
-            $ref: './definitions/user.yaml#/definitions/User'
-        400:
-          description: The specified user ID is invalid (e.g. not a number).
-        404:
-          description: A user with the specified ID was not found.
-        default:
-          description: Unexpected error
+    $ref: "./operations/users_logged.yaml"
 
   /users:
-    get:
-      tags: ["Users"]
-      operationId: getUsers
-      summary: Returns user information when not logged in.
-      description: User information when not logged in.
-      parameters:
-        - in: query
-          name: username
-          required: true
-          type: string
-          minimum: 1
-          description: User Name
-      responses:
-        200:
-          description: A Users object.
-          schema:
-            $ref: './definitions/index.yaml#/definitions/UserList'
-        400:
-          description: The specified user ID is invalid (e.g. not a number).
-        404:
-          description: A user with the specified ID was not found.
-        default:
-          description: Unexpected error
+    $ref: "./operations/users_not_logged.yaml"
+
   /users/{userID}/subscriptions:
-    get:
-      tags: ["Users"]
-      operationId: getSubscriptions
-      summary: Returns user subscription list.
-      description: User subscription.
-      parameters:
-        - in: path
-          name: userID
-          required: true
-          type: integer
-          minimum: 1
-          description: UserID
-      responses:
-        200:
-          description: A Users SubscriptionList object.
-          schema:
-            $ref: './definitions/index.yaml#/definitions/SubscriptionList'
-        400:
-          description: The specified user ID is invalid (e.g. not a number).
-        404:
-          description: A user with the specified ID was not found.
-        default:
-          description: Unexpected error
+    $ref: "./operations/subscriptions.yaml"
+
   /users/{userID}/xp_summaries:
-    get:
-      tags: ["Users"]
-      operationId: getXpSummaries
-      summary: Returns user XP summaries
-      description: User summaries.
-      parameters:
-        - in: query
-          name: timezone
-          required: true
-          type: string
-          minimum: 1
-          description: Time zone
-        - in: path
-          name: userID
-          required: true
-          type: integer
-          minimum: 1
-          description: UserID
-      responses:
-        200:
-          description: A Users summaries object.
-          schema:
-            type: object
-            properties:
-              summaries:
-                type: array
-                items:
-                  $ref: './definitions/xp.yaml#/definitions/XpSummary'
-        400:
-          description: The specified user ID is invalid (e.g. not a number).
-        404:
-          description: A user with the specified ID was not found.
-        default:
-          description: Unexpected error
+    $ref: "./operations/xpsummaries.yaml"

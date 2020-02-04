@@ -1,0 +1,23 @@
+get:
+  tags: ["Users"]
+  operationId: getSubscriptions
+  summary: Returns user subscription list.
+  description: User subscription.
+  parameters:
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A Users SubscriptionList object.
+      schema:
+        $ref: "../definitions/index.yaml#/definitions/SubscriptionList"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

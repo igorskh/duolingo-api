@@ -1,0 +1,19 @@
+post:
+  tags: ["Login"]
+  summary: Returns token in header.
+  description: Login user
+  security: []
+  parameters:
+    - in: body
+      name: username
+      schema:
+        $ref: "../definitions/index.yaml#/definitions/LoginData"
+  responses:
+    200:
+      description: Login successful
+    400:
+      description: Invalid data
+    403:
+      description: Login failed
+    default:
+      description: Unexpected error
