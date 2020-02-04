@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx swagger validate swagger.yaml",
-        "build": "npx redoc-cli bundle swagger.yaml && mkdir public && mv redoc-static.html public/index.html"
+        "build": "npx swagger-merger -i swagger.yaml -o swagger-complete.yaml && npx redoc-cli bundle swagger-complete.yaml && mkdir -p public && mv redoc-static.html public/index.html"
     },
     "repository": {
         "type": "git",
