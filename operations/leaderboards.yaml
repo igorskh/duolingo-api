@@ -1,8 +1,8 @@
 get:
   tags: ["Leaderboards"]
   operationId: getLeaderboard
-  summary: Returns user information when not logged in.
-  description: User information when not logged in.
+  summary: Returns leaderboard information
+  description: Leaderboard information
   parameters:
     - in: path
       name: leaderboardID
@@ -18,7 +18,7 @@ get:
       description: UserID
   responses:
     200:
-      description: A Users object.
+      description: A Leaderdoard object.
       schema:
         $ref: "./definitions/leaderboard.yaml#/definitions/Leaderdoard"
     400:
