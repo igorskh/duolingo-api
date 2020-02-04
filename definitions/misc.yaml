@@ -1,0 +1,123 @@
+definitions:
+  Health:
+    properties:
+      maxHearts:
+        type: integer
+      healthEnabled:
+        type: boolean
+      eligibleForFreeRefill:
+        type: boolean
+      secondsPerHeartSegment:
+        type: integer
+      hearts:
+        type: integer
+      useHealth:
+        type: boolean
+      secondsUntilNextHeartSegment:
+        type: integer
+  ShopItem:
+    properties:
+      purchaseId:
+        type: string
+      purchaseDate:
+        type: integer
+      itemName:
+        type: string
+      id:
+        type: string
+      purchasePrice:
+        type: integer
+  LastStreak:
+    properties:
+      isAvailableForRepair:
+        type: boolean
+      googlePlayProductId:
+        type: string
+      googlePlayDevPayload:
+        type: string
+      length:
+        type: integer
+      daysAgo:
+        type: integer
+      lastReachedGoal:
+        type: integer
+      shortenedProductId:
+        type: string
+  ReferralInfo:
+    properties:
+      inviterName:
+        type: string
+      unconsumedInviteeName:
+        type: string
+      numBonusesReady:
+        type: integer
+      hasReachedCap:
+        type: boolean
+      isEligibleForBonus:
+        type: boolean
+  StreakData:
+    properties:
+      length:
+        type: integer
+      updatedTimeZone:
+        type: string
+      xpGoal:
+        type: integer
+      updatedTimestamp:
+        type: integer
+  Achievement:
+    properties:
+      tier:
+        type: integer
+      count:
+        type: integer
+      tierCounts:
+        type: array
+        items:
+          type: integer
+      name:
+        type: string
+      shouldShowUnlock:
+        type: boolean
+  OptionalFeature:
+    properties:
+      id:
+        type: string
+      status:
+        type: string
+  ProgressQuizItem:
+    properties:
+      endTime:
+        type: integer
+      score:
+        type: number
+      startTime:
+        type: integer
+  TrackingProperties:
+    properties:
+      direction:
+        type: string
+      total_crowns:
+        type: integer
+      took_placementtest:
+        type: boolean
+      learning_language:
+        type: string
+      gold_skill_count:
+        type: integer
+      gold_tree_percent:
+        type: number
+      num_skills_newly_decayed:
+        type: integer
+      num_skills_decayed:
+        type: integer
+      ui_language:
+        type: string
+      max_tree_level:
+        type: integer
+  SmartTip:
+    properties:
+      url:
+        type: string
+      smartTipId:
+        type: string

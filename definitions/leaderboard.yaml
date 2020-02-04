@@ -1,0 +1,38 @@
+definitions:
+  Leaderdoard:
+    properties:
+      active:
+        $ref: '#/definitions/LeaderdoardActive'
+      num_sessions_remaining_to_unlock:
+        type: integer
+      tier:
+        type: integer
+  LeaderdoardActive:
+    properties:
+      cohort:
+        type: object
+        properties:
+          rankings:
+            type: array
+            items:
+              $ref: '#/definitions/LeaderdoardRanking'
+          tier:
+            type: integer
+      score:
+        type: number
+      user_id:
+        type: integer
+      complete:
+        type: boolean
+  LeaderdoardRanking:
+    properties:
+      avatar_url: 
+        type: string
+      display_name:
+        type: string
+      score:
+        type: number
+      streak_extended_today:
+        type: boolean
+      user_id:
+        type: integer

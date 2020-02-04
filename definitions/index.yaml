@@ -1,0 +1,25 @@
+definitions:
+  UserList:
+    properties:
+      users:
+        type: array
+        items:
+          $ref: "./user.yaml#/definitions/User"
+  SubscriptionList:
+    properties:
+      subscriptions:
+        type: array
+        items:
+          $ref: "./user.yaml#/definitions/User"
+  LoginData:
+    properties:
+      distinctId:
+        type: string
+      identifier:
+        type: string
+      password:
+        type: string
+      landingUrl:
+        type: string
+      lastReferrer:
+        type: string
