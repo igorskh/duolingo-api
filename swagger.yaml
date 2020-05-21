@@ -26,6 +26,9 @@ paths:
   /leaderboards/{leaderboardID}/users/{userID}:
     $ref: "./operations/leaderboards.yaml"
 
+  /users/{userID}/achievements:
+    $ref: "./operations/achievements.yaml"
+
   /login:
     $ref: "./operations/login.yaml"
 
