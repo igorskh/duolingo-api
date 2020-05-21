@@ -7,6 +7,65 @@ definitions:
         type: integer
       tier:
         type: integer
+      leaderboard:
+        type: object
+        properties:
+          active_contest:
+            $ref: '#/definitions/LeaderdoardActive'
+          ruleset:
+            $ref: '#/definitions/LeaderboradContestRuleset'
+  LeaderboradContestReward:
+    properties:
+      item_id:
+        type: string
+      item_quantity:
+        type: integer
+      rank:
+        type: integer
+      reward_type:
+        type: string
+      tier:
+        type: integer
+  LeaderboradContestRuleset:
+    properties:
+      cohort_size:
+        type: integer
+      cohort_type:
+        type: string
+      num_demoted:
+        type: array
+        items:
+          type: integer
+      num_losers:
+        type: integer
+      num_promoted:
+        type: array
+        items:
+          type: integer
+      num_winners:
+        type: integer
+      rewards:
+        type: array
+        items:
+          $ref: '#/definitions/LeaderboradContestReward'
+      score_type:
+        type: string
+      tiered:
+        type: boolean
+  LeaderboardContest:
+    properties:
+      contest_end": 
+        type: string
+      contest_start:
+        type: string
+      contest_state:
+        type: string
+      registration_end:
+        type: string
+      registration_state:
+        type: string
+      ruleset:
+        $ref: '#/definitions/LeaderboradContestRuleset'
   LeaderdoardActive:
     properties:
       cohort:
@@ -18,12 +77,16 @@ definitions:
               $ref: '#/definitions/LeaderdoardRanking'
           tier:
             type: integer
+      collab_goal_achieved:
+        type: boolean
       score:
         type: number
       user_id:
         type: integer
       complete:
         type: boolean
+      contest:
+        $ref: '#/definitions/LeaderboardContest'
   LeaderdoardRanking:
     properties:
       avatar_url: 
