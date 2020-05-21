@@ -32,6 +32,9 @@ paths:
   /login:
     $ref: "./operations/login.yaml"
 
+  /shop-items:
+    $ref: "./operations/shop_items.yaml"
+
   /users/{userID}:
     $ref: "./operations/users_logged.yaml"
 

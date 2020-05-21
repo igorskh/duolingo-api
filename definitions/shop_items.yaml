@@ -1,0 +1,21 @@
+definitions:
+  ShopItem:
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: integer
+      localizedDescription:
+        type: string
+      currencyType:
+        type: string
+      type:
+        type: string
+  ShopItemList:
+    properties:
+      shopItems:
+        type: array
+        items:
+          $ref: '#/definitions/ShopItem'
