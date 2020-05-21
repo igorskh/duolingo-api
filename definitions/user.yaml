@@ -147,6 +147,8 @@ definitions:
         type: boolean
       emailAssignmentComplete:
         type: boolean
+      hasRecentActivity15:
+        type: boolean
       lastStreak:
         $ref: './misc.yaml#/definitions/LastStreak'
       shopItems:
