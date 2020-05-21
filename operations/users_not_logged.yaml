@@ -8,7 +8,6 @@ get:
       name: username
       required: true
       type: string
-      minimum: 1
       description: User Name
   responses:
     200:

@@ -1,0 +1,21 @@
+definitions:
+  Achievements:
+    properties:
+      achievements:
+          type: array
+          items:
+            $ref: '#/definitions/Achievement'
+  Achievement:
+    properties:
+      count:
+        type: integer
+      name:
+        type: string
+      shouldShowUnlock:
+        type: boolean
+      tier:
+        type: integer
+      tierCounts:
+        type: array
+        items:
+          type: integer

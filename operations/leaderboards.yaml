@@ -1,14 +1,13 @@
 get:
   tags: ["Leaderboards"]
   operationId: getLeaderboard
-  summary: Returns leaderboard information
-  description: Leaderboard information
+  summary: Returns user leaderboard information.
+  description: User leaderboard information.
   parameters:
     - in: path
       name: leaderboardID
       required: true
       type: string
-      minimum: 1
       description: LeaderboardID
     - in: path
       name: userID
@@ -18,7 +17,7 @@ get:
       description: UserID
   responses:
     200:
-      description: A Leaderdoard object.
+      description: A Leaderboard object.
       schema:
         $ref: "./definitions/leaderboard.yaml#/definitions/Leaderdoard"
     400:
