@@ -154,6 +154,18 @@ definitions:
       shopItems:
         type: array
         items:
-          $ref: './misc.yaml#/definitions/ShopItem'
+          $ref: './shop_items.yaml#/definitions/ShopItemPurchasedList'
       health:
         $ref: './misc.yaml#/definitions/Health'
+      timerBoostConfig:
+        $ref: './misc.yaml#/definitions/TimerBoostConfig'
+      emailClubs:
+        type: boolean
+      autoUpdatePreloadedCourses:
+        type: boolean
+      gemsConfig:
+        $ref: './misc.yaml#/definitions/GemsConfig'
+      currencyRewardBundles:
+        type: array
+        items:
+          $ref: './misc.yaml#/definitions/CurrencyRewardBundle'

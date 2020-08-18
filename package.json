@@ -4,7 +4,7 @@
     "description": "Unofficial Duolingo API Definition",
     "main": "index.js",
     "scripts": {
-        "test": "npx swagger validate swagger.yaml",
+        "test": "npm run-script merge && npx swagger validate swagger-complete.yaml",
         "merge": "npx swagger-merger -i swagger.yaml -o swagger-complete.yaml",
         "redoc": "npx redoc-cli bundle swagger-complete.yaml && mkdir -p public && mv redoc-static.html public/index.html",
         "mock": "npx prism mock swagger-complete.yaml",
@@ -19,7 +19,7 @@
     "homepage": "https://github.com/igorskh/duolingo-api",
     "dependencies": {
         "@stoplight/prism-cli": "^3.2.5",
-        "redoc": "^2.0.0-rc.1",
+        "redoc": "^2.0.0-rc.37",
         "swagger-cli": "^3.0.1",
         "swagger-merger": "^1.4.3"
     }
