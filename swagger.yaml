@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   title: Duolingo Unofficial API
   description: Unofficial API description for Duolingo.
-  version: 1.1.0
+  version: 1.1.1
 host: www.duolingo.com
 basePath: /
 schemes:
