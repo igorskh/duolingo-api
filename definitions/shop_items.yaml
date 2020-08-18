@@ -19,3 +19,25 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/ShopItem'
+  ShopItemPurchased:
+    properties:
+      quantity:
+        type: integer
+      purchaseDate:
+        type: integer
+      id:
+        type: string
+      purchaseId:
+        type: string
+      itemName:
+        type: string
+      purchasePrice:
+        type: integer
+      subscriptionInfo:
+        $ref: './plus.yaml#/definitions/SubscriptionInfo'
+  ShopItemPurchasedList:
+    properties:
+      shopItems:
+        type: array
+        items:
+          $ref: '#/definitions/ShopItemPurchased'
