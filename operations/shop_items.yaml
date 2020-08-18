@@ -19,6 +19,6 @@ post:
     200:
       description: A ShopItemPurchased object.
       schema:
-        $ref: "./definitions/shop_items.yaml#/definitions/ShopItemList"
+        $ref: "./definitions/shop_items.yaml#/definitions/ShopItemPurchased"
     default:
       description: Unexpected error
