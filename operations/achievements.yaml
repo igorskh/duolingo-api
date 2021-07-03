@@ -36,6 +36,10 @@ get:
       required: true
       type: string
       description: Learning language
+    - in: query
+      name: rewardType
+      type: string
+      description: Reward type
   responses:
     200:
       description: Achievements object.

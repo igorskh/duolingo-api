@@ -23,6 +23,9 @@ security:
   - BearerAuth: []
 
 paths:
+  /goals/schema:
+    $ref: "./operations/goals.yaml"
+
   /leaderboards/{leaderboardID}/users/{userID}:
     $ref: "./operations/leaderboards.yaml"
 
