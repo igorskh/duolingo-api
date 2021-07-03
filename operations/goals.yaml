@@ -1,0 +1,26 @@
+get:
+  tags: ["Goals"]
+  operationId: getGoalsSchema
+  summary: Returns goals schema
+  description: Goals schema
+  parameters:
+    - in: query
+      name: ui_language
+      type: string
+      description: UI Language
+  responses:
+    200:
+      description: Goals object
+      schema:
+        type: object
+        properties:
+          goals:
+            $ref: "./definitions/goals.yaml#/definitions/Goals"
+          badges:
+            $ref: "./definitions/goals.yaml#/definitions/Badges"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

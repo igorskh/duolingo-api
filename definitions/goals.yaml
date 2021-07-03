@@ -1,0 +1,99 @@
+definitions:
+  Goals:
+    type: array
+    items:
+      $ref: '#/definitions/Goal'
+  Badges:
+    type: array
+    items:
+      $ref: '#/definitions/Badge'
+  Badge:
+    properties:
+      badgeId:
+        type: string
+      category:
+        type: string
+      version:
+        type: integer
+      icon:
+        $ref: '#/definitions/Icon'
+      title:
+        $ref: '#/definitions/String'
+      description:
+        $ref: '#/definitions/String'
+      iconVersions:
+        properties:
+          v1:
+            $ref: '#/definitions/String'
+          v2:
+            $ref: '#/definitions/String'
+
+  Goal:
+    properties:
+      goalId:
+        type: string
+      category:
+        type: string
+      version:
+        type: integer
+      metric:
+        type: string
+      threshold:
+        type: integer
+      themeId:
+        type: string
+      badgeId:
+        type: string
+      title:
+        $ref: '#/definitions/String'
+      period:
+        $ref: '#/definitions/GoalPeriod'
+
+  GoalPeriod:
+    properties:
+      oneOff:
+        type: object
+        properties:
+          start:
+            $ref: '#/definitions/Date'
+          end:
+            $ref: '#/definitions/Date'
+  Icon:
+    properties:
+      enabled:
+        $ref: '#/definitions/IconMode'
+      hero:
+        $ref: '#/definitions/IconMode'
+      disabled:
+        $ref: '#/definitions/IconMode'
+  
+  IconMode:
+    properties:
+      lightMode:
+        $ref: '#/definitions/IconImage'
+      darkMode:
+        $ref: '#/definitions/IconImage'
+
+  IconImage:
+    properties:
+      lottie:
+        type: string
+      svg:
+        type: string
+      pdf:
+        type: string
+
+  String:
+    properties:
+      uiString:
+        type: string
+      sourceId:
+        type: integer
+  Date:
+    properties:
+      year:
+        type: integer
+      month:
+        type: integer
+      day:
+        type: integer
