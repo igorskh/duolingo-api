@@ -149,6 +149,7 @@ definitions:
         type: string
       currency:
         type: string
+
   Icon:
     properties:
       enabled:
@@ -180,6 +181,7 @@ definitions:
         type: string
       sourceId:
         type: integer
+        
   Date:
     properties:
       year:
