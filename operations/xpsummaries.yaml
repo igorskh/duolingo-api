@@ -5,6 +5,16 @@ get:
   description: User summaries.
   parameters:
     - in: query
+      name: startDate
+      required: true
+      type: string
+      description: Start date
+    - in: query
+      name: endDate
+      required: true
+      type: string
+      description: End date
+    - in: query
       name: timezone
       required: true
       type: string
