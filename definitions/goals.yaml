@@ -45,7 +45,7 @@ definitions:
       badgeId:
         type: string
       title:
-        $ref: ./misc.yaml#/definitions/String'
+        $ref: './misc.yaml#/definitions/String'
       period:
         $ref: '#/definitions/GoalPeriod'
 
