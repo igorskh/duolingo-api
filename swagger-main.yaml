@@ -23,7 +23,7 @@ security:
   - BearerAuth: []
 
 paths:
-  /login:
+  /2017-06-30/login:
     $ref: "./operations/login.yaml"
 
   /2017-06-30/users/{userID}:
