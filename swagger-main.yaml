@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   title: Duolingo Unofficial API (Main)
   description: Unofficial API description for Duolingo.
-  version: 1.0.0
+  version: 1.1.1
 host: www.duolingo.com
 basePath: /
 schemes:
@@ -23,10 +23,22 @@ security:
   - BearerAuth: []
 
 paths:
+  /goals/schema:
+    $ref: "./operations/goals.yaml"
+
+  /leaderboards/{leaderboardID}/users/{userID}:
+    $ref: "./operations/leaderboards.yaml"
+
+  /users/{userID}/achievements:
+    $ref: "./operations/achievements.yaml"
+
   /login:
     $ref: "./operations/login.yaml"
 
-  /2017-06-30/users/{userID}:
+  /shop-items:
+    $ref: "./operations/shop_items.yaml"
+
+  /users/{userID}:
     $ref: "./operations/users_logged.yaml"
 
   /2017-06-30/users:

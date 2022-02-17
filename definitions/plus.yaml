@@ -1,0 +1,25 @@
+definitions:
+  SubscriptionInfo:
+    properties:
+      renewer:
+        type: string
+      tier:
+        tier: string
+      price:
+        type: integer
+      expectedExpiration:
+        type: integer
+      isFreeTrialPeriod:
+        type: boolean
+      renewing:
+        type: boolean
+      currency:
+        type: string
+      productId:
+        type: string
+      isIntroOfferPeriod:
+        type: boolean
+      periodLength:
+        type: integer
+      isInBillingRetryPeriod:
+        type: boolean

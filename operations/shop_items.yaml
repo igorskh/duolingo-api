@@ -1,19 +1,24 @@
 get:
-  tags: ["ShopItems"]
-  operationId: getShopItems
-  summary: Returns shop items list.
-  description: User shop items list
+  tags: ["Shop"]
+  operationId: getShopItemList
+  summary: Returns shop item list.
+  description: List Shop items.
   responses:
     200:
-      description: A Users shop items list object.
+      description: A ShopItemList object.
       schema:
-        type: object
-        properties:
-          shopItems:
-            type: array
-            items:
-              $ref: "./definitions/shop_items.yaml#/definitions/ShopItemsList"
-    400:
-      description: Bad request
+        $ref: "./definitions/shop_items.yaml#/definitions/ShopItemList"
+    default:
+      description: Unexpected error
+post:
+  tags: ["Shop"]
+  operationId: postShopItemList
+  summary: Buys an item from a shop
+  description: Buys an item from a shop
+  responses:
+    200:
+      description: A ShopItemPurchased object.
+      schema:
+        $ref: "./definitions/shop_items.yaml#/definitions/ShopItemPurchased"
     default:
       description: Unexpected error

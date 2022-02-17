@@ -1,0 +1,53 @@
+get:
+  tags: ["Achievements"]
+  operationId: getAchievements
+  summary: Returns user achievements
+  description: User achievements.
+  parameters:
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+    - in: query
+      name: fromLanguage
+      required: true
+      type: string
+      description: Language from
+    - in: query
+      name: hasPlus
+      type: integer
+      description: Has plus subscription
+    - in: query
+      name: isAgeRestricted
+      type: integer
+      description: Is age restricted
+    - in: query
+      name: isProfilePublic
+      type: integer
+      description: Is profile public
+    - in: query
+      name: isSchools
+      type: integer
+      description: Is schools
+    - in: query
+      name: learningLanguage
+      required: true
+      type: string
+      description: Learning language
+    - in: query
+      name: rewardType
+      type: string
+      description: Reward type
+  responses:
+    200:
+      description: Achievements object.
+      schema:
+        $ref: "./definitions/achievements.yaml#/definitions/Achievements"
+    400:
+      description: Learning language or language from are not provided
+    404:
+      description: User not found
+    default:
+      description: Unexpected error

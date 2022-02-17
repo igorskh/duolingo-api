@@ -1,27 +1,43 @@
 definitions:
-  ShopItemsList:
+  ShopItem:
     properties:
-      iconId:
-        type: integer
-        example: 63
-      name:
-        type: string
-        example: Idioms and Proverbs
-      localizedDescription:
-        type: string
-        example: Learn some German idioms and proverbs.
-      price:
-        type: integer
-        example: 30
       id:
         type: string
-        example: idioms
-      type:
+      name:
         type: string
-        example: bonus_skill
+      price:
+        type: integer
+      localizedDescription:
+        type: string
       currencyType:
         type: string
-        example: XLG
-      skillId:
+      type:
         type: string
-        example: 167c39ab049e169fb474f18c5ac5c906
+  ShopItemList:
+    properties:
+      shopItems:
+        type: array
+        items:
+          $ref: '#/definitions/ShopItem'
+  ShopItemPurchased:
+    properties:
+      quantity:
+        type: integer
+      purchaseDate:
+        type: integer
+      id:
+        type: string
+      purchaseId:
+        type: string
+      itemName:
+        type: string
+      purchasePrice:
+        type: integer
+      subscriptionInfo:
+        $ref: './plus.yaml#/definitions/SubscriptionInfo'
+  ShopItemPurchasedList:
+    properties:
+      shopItems:
+        type: array
+        items:
+          $ref: '#/definitions/ShopItemPurchased'

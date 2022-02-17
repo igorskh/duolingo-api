@@ -15,20 +15,6 @@ definitions:
         type: boolean
       secondsUntilNextHeartSegment:
         type: integer
-  ShopItem:
-    properties:
-      wagerDay:
-        type: integer
-      purchaseId:
-        type: string
-      purchaseDate:
-        type: integer
-      itemName:
-        type: string
-      id:
-        type: string
-      purchasePrice:
-        type: integer
   LastStreak:
     properties:
       isAvailableForRepair:
@@ -123,3 +109,84 @@ definitions:
         type: string
       smartTipId:
         type: string
+  TimerBoostConfig:
+    properties:
+      timerBoosts:
+        type: integer
+      timePerBoost:
+        type: integer
+      hasFreeTimerBoost:
+        type: boolean
+  GemsConfig:
+    properties:
+      gems:
+        type: integer
+      gemsPerSkill:
+        type: integer
+      useGems:
+        type: boolean
+  CurrencyRewardBundle:
+    properties:
+      id:
+        type: string
+      empty:
+        type: boolean
+      rewardBundleType:
+        type: string
+      rewards:
+        type: array
+        items:
+          $ref: "#/definitions/CurrencyRewardBundlesRewardsItem"
+  CurrencyRewardBundlesRewardsItem:
+    properties:
+      consumed:
+        type: boolean
+      amount:
+        type: integer
+      rewardType:
+        type: string
+      id:
+        type: string
+      currency:
+        type: string
+
+  Icon:
+    properties:
+      enabled:
+        $ref: '#/definitions/IconMode'
+      hero:
+        $ref: '#/definitions/IconMode'
+      disabled:
+        $ref: '#/definitions/IconMode'
+  
+  IconMode:
+    properties:
+      lightMode:
+        $ref: '#/definitions/IconImage'
+      darkMode:
+        $ref: '#/definitions/IconImage'
+
+  IconImage:
+    properties:
+      lottie:
+        type: string
+      svg:
+        type: string
+      pdf:
+        type: string
+
+  String:
+    properties:
+      uiString:
+        type: string
+      sourceId:
+        type: integer
+        
+  Date:
+    properties:
+      year:
+        type: integer
+      month:
+        type: integer
+      day:
+        type: integer

@@ -7,6 +7,8 @@ definitions:
           $ref: "./user.yaml#/definitions/User"
   SubscriptionList:
     properties:
+      totalSubscriptions:
+        type: integer
       subscriptions:
         type: array
         items:

@@ -1,0 +1,60 @@
+definitions:
+  Goals:
+    type: array
+    items:
+      $ref: '#/definitions/Goal'
+  Badges:
+    type: array
+    items:
+      $ref: '#/definitions/Badge'
+  Badge:
+    properties:
+      badgeId:
+        type: string
+      category:
+        type: string
+      version:
+        type: integer
+      icon:
+        $ref: './misc.yaml#/definitions/Icon'
+      title:
+        $ref: './misc.yaml#/definitions/String'
+      description:
+        $ref: './misc.yaml#/definitions/String'
+      iconVersions:
+        properties:
+          v1:
+            $ref: './misc.yaml#/definitions/String'
+          v2:
+            $ref: './misc.yaml#/definitions/String'
+
+  Goal:
+    properties:
+      goalId:
+        type: string
+      category:
+        type: string
+      version:
+        type: integer
+      metric:
+        type: string
+      threshold:
+        type: integer
+      themeId:
+        type: string
+      badgeId:
+        type: string
+      title:
+        $ref: './misc.yaml#/definitions/String'
+      period:
+        $ref: '#/definitions/GoalPeriod'
+
+  GoalPeriod:
+    properties:
+      oneOff:
+        type: object
+        properties:
+          start:
+            $ref: './misc.yaml#/definitions/Date'
+          end:
+            $ref: './misc.yaml#/definitions/Date'
