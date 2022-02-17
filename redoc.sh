@@ -1,4 +1,6 @@
+rm -rf public
 mkdir -p public
+cp public_template.html public/index.html
 
 FILES="complete-swagger-*.yaml"
 for f in $FILES
