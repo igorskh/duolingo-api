@@ -1,0 +1,24 @@
+get:
+  tags: ["Kudos"]
+  operationId: getKudosReceived
+  summary: Returns kudos received
+  description: Kudos received
+  parameters:
+    - in: query
+      name: _
+      type: string
+      description: Timestamp
+  responses:
+    200:
+      description: A kudos received response.
+      schema:
+        type: object
+        properties:
+          kudos:
+            type: array
+            items:
+              $ref: "./definitions/kudos.yaml#/definitions/Kudos"
+    400:
+      description: Bad request
+    default:
+      description: Unexpected error

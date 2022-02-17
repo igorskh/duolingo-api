@@ -17,6 +17,8 @@ definitions:
         type: integer
   ShopItem:
     properties:
+      wagerDay:
+        type: integer
       purchaseId:
         type: string
       purchaseDate:

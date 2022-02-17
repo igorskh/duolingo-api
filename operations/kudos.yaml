@@ -1,0 +1,17 @@
+post:
+  tags: ["Kudos"]
+  summary: Give kudos to the event
+  description: Give kudos
+  security: []
+  parameters:
+    - in: body
+      name: kudos
+      schema:
+        $ref: "./definitions/kudos.yaml#/definitions/PostKudosData"
+  responses:
+    200:
+      description: Login successful
+    400:
+      description: Invalid data
+    default:
+      description: Unexpected error

@@ -1,4 +1,5 @@
 dumps
 node_modules
 public
-swagger-complete.yaml
+complete-swagger-*.yaml
+.DS_Store

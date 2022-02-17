@@ -1,0 +1,31 @@
+get:
+  tags: ["Kudos"]
+  operationId: getKudos
+  summary: Returns kudos information
+  description: Kudos information
+  parameters:
+    - in: query
+      name: after
+      type: string
+      description: Timestamp after
+    - in: query
+      name: _
+      type: string
+      description: Timestamp
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A Users kudos list object.
+      schema:
+        $ref: "./definitions/kudos.yaml#/definitions/KudosList"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

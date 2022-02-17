@@ -1,0 +1,17 @@
+get:
+  tags: ["Kudos"]
+  operationId: getKudosAssets
+  summary: Returns kudos assets
+  description: Kudos assets
+  parameters:
+    - in: query
+      name: _
+      type: string
+      description: Timestamp
+  responses:
+    200:
+      description: A kudos assets response.
+      schema:
+        $ref: "./definitions/kudos.yaml#/definitions/KudosAssets"
+    default:
+      description: Unexpected error

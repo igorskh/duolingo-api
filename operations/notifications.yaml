@@ -1,0 +1,16 @@
+get:
+  tags: ["Notifications"]
+  operationId: getNotifications
+  summary: Returns notification list.
+  description: Notification list
+  responses:
+    200:
+      description: Notification list object.
+      schema:
+        type: array
+        items:
+          $ref: "./definitions/notifications.yaml#/definitions/Notification"
+    400:
+      description: Bad request
+    default:
+      description: Unexpected error

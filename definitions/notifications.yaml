@@ -1,0 +1,44 @@
+definitions:
+  Notification:
+    properties:
+      comment:
+        type: boolean
+      streak:
+        type: boolean
+      translator_promotion:
+        type: boolean
+      invite:
+        type: boolean
+      pretty_datetime:
+        type: string
+      datetime:
+        type: string
+      user:
+        type: object
+        properties:
+          username:
+            type: string
+          id:
+            type: integer
+          avatar:
+            type: string
+      unseen:
+        type: boolean
+      pass:
+        type: boolean
+      follow:
+        type: boolean
+      translation:
+        type: boolean
+      id:
+        type: integer
+      lingot_icon:
+        type: boolean
+      streak_days:
+        type: integer
+      document_lingots:
+        type: boolean
+      num_rupees:
+        type: integer
+      translation_lingots:
+        type: boolean

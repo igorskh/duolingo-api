@@ -1,0 +1,31 @@
+get:
+  tags: ["Kudos"]
+  operationId: getKudosDrawer
+  summary: Returns kudos drawer
+  description: Kudos drawer
+  parameters:
+    - in: query
+      name: uiLanguage
+      type: string
+      description: UI language (2-letter code)
+    - in: query
+      name: _
+      type: string
+      description: Timestamp
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A kudos drawer response.
+      schema:
+        $ref: "./definitions/kudos.yaml#/definitions/KudosDrawerResponse"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

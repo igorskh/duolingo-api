@@ -1,9 +1,9 @@
 swagger: "2.0"
 info:
-  title: Duolingo Unofficial API
+  title: Duolingo Unofficial API (Leaderboards)
   description: Unofficial API description for Duolingo.
   version: 1.0.0
-host: www.duolingo.com
+host: duolingo-leaderboards-prod.duolingo.com
 basePath: /
 schemes:
   - http
@@ -21,22 +21,7 @@ securityDefinitions:
 
 security:
   - BearerAuth: []
-
+  
 paths:
   /leaderboards/{leaderboardID}/users/{userID}:
     $ref: "./operations/leaderboards.yaml"
-
-  /login:
-    $ref: "./operations/login.yaml"
-
-  /users/{userID}:
-    $ref: "./operations/users_logged.yaml"
-
-  /users:
-    $ref: "./operations/users_not_logged.yaml"
-
-  /users/{userID}/subscriptions:
-    $ref: "./operations/subscriptions.yaml"
-
-  /users/{userID}/xp_summaries:
-    $ref: "./operations/xpsummaries.yaml"

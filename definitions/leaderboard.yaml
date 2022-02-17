@@ -3,27 +3,51 @@ definitions:
     properties:
       active:
         $ref: '#/definitions/LeaderdoardActive'
+      # ended:
+      #   type: integer
+      leaderboard:
+        type: object
+        properties:
+          active_contest: 
+            $ref: '#/definitions/LeaderboardContest'
+          # next_contest_start:
+          #   type: object
+          ruleset:
+            $ref: '#/definitions/LeaderboardContestRuleset'
       num_sessions_remaining_to_unlock:
+        type: integer
+      num_wins:
+        type: integer
+      streak_in_tier:
+        type: integer
+      top_three_finishes:
         type: integer
       tier:
         type: integer
   LeaderdoardActive:
     properties:
+      contest:
+        $ref: '#/definitions/LeaderboardContest'
       cohort:
-        type: object
-        properties:
-          rankings:
-            type: array
-            items:
-              $ref: '#/definitions/LeaderdoardRanking'
-          tier:
-            type: integer
+        $ref: '#/definitions/LeaderboardCohort'
       score:
         type: number
       user_id:
         type: integer
       complete:
         type: boolean
+      # goal_claimed:
+      #   type: boolean
+      is_demoted:
+        type: boolean
+      is_loser:
+        type: boolean
+      is_promoted:
+        type: boolean
+      is_winner:
+        type: boolean
+      # rewards:
+      #   type: boolean
   LeaderdoardRanking:
     properties:
       avatar_url: 
@@ -32,7 +56,88 @@ definitions:
         type: string
       score:
         type: number
+      has_plus:
+        type: boolean
+      has_recent_activity_15:
+        type: boolean
+      reaction:
+        type: string
       streak_extended_today:
         type: boolean
       user_id:
+        type: integer
+
+  LeaderboardCohort:
+    properties:
+      rankings:
+        type: array
+        items:
+          $ref: '#/definitions/LeaderdoardRanking'
+      tier:
+        type: integer
+      creation_date:
+        type: string
+
+  LeaderboardContest:
+    properties:
+      contest_end: 
+        type: string
+      contest_id: 
+        type: string
+      contest_start: 
+        type: string
+      contest_state: 
+        type: string
+      offset_bucket: 
+        type: integer
+      registration_end: 
+        type: string
+      registration_state: 
+        type: string
+      ruleset:
+        $ref: '#/definitions/LeaderboardContestRuleset'
+
+  LeaderboardContestRuleset:
+    properties:
+      cohort_size: 
+        type: integer
+      cohort_type: 
+        type: string
+      # goals: 
+      #   type: string
+      num_demoted: 
+        type: array
+        items:
+          type: integer
+      num_losers: 
+        type: integer
+      num_promoted: 
+        type: array
+        items:
+          type: integer
+      num_winners: 
+        type: integer
+      rewards:
+        type: array
+        items:
+          $ref: '#/definitions/LeaderboardContestReward'
+      score_type:
+        type: string
+      tiered:
+        type: boolean
+
+
+  LeaderboardContestReward:
+    properties:
+      expiration: 
+        type: string
+      # item_id: 
+      #   type: string
+      item_quantity: 
+        type: integer
+      rank: 
+        type: integer
+      reward_type: 
+        type: string
+      tier: 
         type: integer

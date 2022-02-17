@@ -1,0 +1,19 @@
+get:
+  tags: ["ShopItems"]
+  operationId: getShopItems
+  summary: Returns shop items list.
+  description: User shop items list
+  responses:
+    200:
+      description: A Users shop items list object.
+      schema:
+        type: object
+        properties:
+          shopItems:
+            type: array
+            items:
+              $ref: "./definitions/shop_items.yaml#/definitions/ShopItemsList"
+    400:
+      description: Bad request
+    default:
+      description: Unexpected error

@@ -1,0 +1,40 @@
+swagger: "2.0"
+info:
+  title: Duolingo Unofficial API (Friends)
+  description: Unofficial API description for Duolingo.
+  version: 1.0.0
+host: friends-prod.duolingo.com
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+securityDefinitions:
+  BearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+
+security:
+  - BearerAuth: []
+  
+paths:
+  /kudos/{userID}:
+    $ref: "./operations/user_kudos.yaml"
+  /kudos/{userID}/drawer:
+    $ref: "./operations/kudos_drawer.yaml"
+  /kudos/offers:
+    $ref: "./operations/kudos_offers.yaml"
+  /kudos/received:
+    $ref: "./operations/kudos_received.yaml"
+  /kudos/{userID}/feed:
+    $ref: "./operations/kudos_feed.yaml"
+  /kudos:
+    $ref: "./operations/kudos.yaml"
+  /kudos/assets:
+    $ref: "./operations/kudos_assets.yaml"
+

@@ -1,0 +1,45 @@
+swagger: "2.0"
+info:
+  title: Duolingo Unofficial API (Main)
+  description: Unofficial API description for Duolingo.
+  version: 1.0.0
+host: www.duolingo.com
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+securityDefinitions:
+  BearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+
+security:
+  - BearerAuth: []
+
+paths:
+  /login:
+    $ref: "./operations/login.yaml"
+
+  /2017-06-30/users/{userID}:
+    $ref: "./operations/users_logged.yaml"
+
+  /2017-06-30/users:
+    $ref: "./operations/users_not_logged.yaml"
+
+  /2017-06-30/users/{userID}/subscriptions:
+    $ref: "./operations/subscriptions.yaml"
+
+  /2017-06-30/users/{userID}/xp_summaries:
+    $ref: "./operations/xpsummaries.yaml"
+
+  /2017-06-30/shop-items:
+    $ref: "./operations/shop_items.yaml"
+
+  /notifications:
+    $ref: "./operations/notifications.yaml"

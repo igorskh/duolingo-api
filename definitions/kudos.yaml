@@ -1,0 +1,250 @@
+definitions:
+  KudosList:
+    properties:
+      kudos:
+        type: array
+        items:
+          $ref: "./kudos.yaml#/definitions/Kudos"
+  Kudos:
+    properties:
+      achievement_timestamp:
+        type: integer
+      canSendKudos:
+        type: boolean
+      displayName:
+        type: string
+      eventId:
+        type: string
+      expiration_timestamp:
+        type: integer
+      fromLanguageAbbreviation:
+        type: string
+      # goalId:
+      #   type: string
+      isInteractionEnabled:
+        type: boolean
+      isSystemGenerated:
+        type: boolean
+      # leaderboardRank:
+      #   type: boolean
+      learningLanguageAbbreviation:
+        type: string
+      lessonCount:
+        type: integer
+      milestoneId:
+        type: string
+      # milestoneVariables:
+      #   type: string
+      minimumTreeLevel:
+        type: integer
+      # month:
+      #   type: string
+      notificationType:
+        type: string
+      picture:
+        type: string
+      reactionType:
+        type: string
+      receiveId:
+        type: string
+      streakMilestone:
+        type: integer
+      tier:
+        type: integer
+      timesAchieved:
+        type: integer
+      timestamp:
+        type: integer
+      triggerType:
+        type: string
+      userId:
+        type: integer
+
+  KudosDrawerResponse:
+    properties:
+      kudosConfig:
+        type: object
+        properties:
+          maxAvatars:
+            type: integer
+      kudosDrawer:
+        $ref: "./kudos.yaml#/definitions/KudosDrawer"
+
+
+  KudosDrawer:
+    properties:
+      actionIcon:
+        type: string
+      canSendKudos:
+        type: boolean
+      events:
+        type: array
+        items:
+          $ref: "./kudos.yaml#/definitions/KudosDrawerEvent"
+      isSystemGenerated:
+        type: boolean
+      kudosIcon:
+        type: string
+        example: kudos_drawer_x_lesson
+      kudosSentButtonLabel:
+        type: string
+        example: High five given
+      notificationType:
+        type: string
+        example: OFFER
+      primaryButtonLabel:
+        type: string
+        example: Give high five
+      secondaryButtonLabel:
+        type: string
+        example: No thanks
+      showStartIcon:
+        type: boolean
+      tier:
+        type: integer
+        example: 10
+      title:
+        type: string
+        example: Wow! <span>User</span> did 10 lessons in one day!
+      triggerType:
+        type: string
+        example: x_lesson
+
+  KudosDrawerEvent:
+    properties:
+      displayName:
+        type: string
+      eventId:
+        type: string
+      icon:
+        type: string
+        example: kudos_drawer_x_lesson
+      picture:
+        type: string
+      userId:
+        type: integer
+
+  KudosFeed:
+    properties:
+      kudosConfig:
+        $ref: "./kudos.yaml#/definitions/KudosConfig"
+      kudosFeed:
+        type: array
+        items:
+          $ref: "./kudos.yaml#/definitions/KudosFeedItem"
+      
+  KudosConfig:
+    properties:
+      reactions:
+        type: array
+        items:
+          $ref: "./kudos.yaml#/definitions/KudosReaction"
+      shareLabel:
+        type: string
+
+  KudosReaction:
+    properties:
+      reactionHoverAsset:
+        type: string
+      reactionLabel:
+        type: string
+      reactionSentLabel:
+        type: string
+      reactionType:
+        type: string
+
+  KudosFeedItem:
+    properties:
+      kudosHeader:
+        type: string
+      kudosFeedCards:
+        type: array
+        items:
+          $ref: "./kudos.yaml#/definitions/KudosFeedCard"
+    
+  KudosFeedCard:
+    properties:
+      body:
+        type: string
+        example: Completed a 30 day streak!
+      defaultReaction:
+        type: string
+        example: congrats
+      displayName:
+        type: string
+      eventId:
+        type: string
+      isInteractionEnabled:
+        type: boolean
+      kudosIcon:
+        type: string
+        example: kudos_feed_streak_milestone_30
+      milestoneId:
+        type: string
+      notificationType:
+        type: string
+        example: OFFER
+      picture:
+        type: string
+      reactionCounts:
+        type: object
+        properties:
+          congrats:
+            type: integer
+          high_five:
+            type: integer
+          support:
+            type: integer
+          cheer:
+            type: integer
+          love:
+            type: integer
+      reactionType:
+        type: string
+        example: congrats
+      # shareCard:
+      #   type: object
+      subtitle:
+        type: string
+        example: 3 days
+      tier:
+        type: integer
+        example: 30
+      timestamp:
+        type: integer
+      triggerType:
+        type: string
+        example: streak_milestone
+      userId:
+        type: integer
+
+  PostKudosData:
+    properties:
+      eventIds:
+        type: array
+        items:
+          type: string
+      reactionType:
+        type: string
+        example: congrats
+      screen:
+        type: string
+        example: kudos_feed
+
+  KudosAssets:
+    properties:
+      kudosDrawerAssets:
+        type: object
+        additionalProperties:
+          $ref: "./kudos.yaml#/definitions/KudosAsset"
+
+  KudosAsset:
+    properties:
+      iconStrokeDarkUrl:
+        type: string
+      iconStrokeUrl:
+        type: string
+      iconUrl:
+        type: string
+      iconDarkUrl:
+        type: strin

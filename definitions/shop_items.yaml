@@ -1,0 +1,27 @@
+definitions:
+  ShopItemsList:
+    properties:
+      iconId:
+        type: integer
+        example: 63
+      name:
+        type: string
+        example: Idioms and Proverbs
+      localizedDescription:
+        type: string
+        example: Learn some German idioms and proverbs.
+      price:
+        type: integer
+        example: 30
+      id:
+        type: string
+        example: idioms
+      type:
+        type: string
+        example: bonus_skill
+      currencyType:
+        type: string
+        example: XLG
+      skillId:
+        type: string
+        example: 167c39ab049e169fb474f18c5ac5c906
