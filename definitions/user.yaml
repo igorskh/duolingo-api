@@ -1,4 +1,354 @@
 definitions:
+  UserByUsername:
+    properties:
+      filter_stream:
+        type: boolean
+      language_data:
+        $ref: './language_data.yaml#/definitions/LanguageDataDict'
+      last_streak:
+        $ref: '#/definitions/LastStreak'
+      push_night_owl:
+        type: boolean
+      deactivated:
+        type: boolean
+      auto_facebook_post:
+        type: boolean
+      notify_schools_newsletter:
+        type: boolean
+      push_clubs:
+        type: boolean
+      site_streak:
+        type: integer
+      notification_sms_disabled:
+        type: boolean
+      email_det_marketing:
+        type: boolean
+      notify_edit_suggested:
+        type: boolean
+      dict_base_url:
+        type: string
+      languages:
+        type: array
+        items:
+          $ref: '#/definitions/Language'
+      push_edit_suggested:
+        type: boolean
+      twitter_id:
+        type: string
+      transliterate:
+        type: boolean
+      push_follow:
+        type: boolean
+      email_events_digest:
+        type: boolean
+      sound_effects:
+        type: boolean
+      location:
+        type: string
+      facebook_id:
+        type: string
+      browser_language:
+        type: string
+      notify_schools_promotion:
+        type: boolean
+      intentory:
+        $ref: '#/definitions/Intentory'
+      username:
+        type: string
+      bio:
+        type: string
+      tts_cdn_url:
+        type: string
+      created:
+        type: string
+      push_activity_reply:
+        type: boolean
+      learning_language_string:
+        type: string
+      # TODO: next
+      # tracking_properties:
+      # $ref:
+      push_comment:
+        type: boolean
+      notification_whatsapp_enabled:
+        type: boolean
+      # TODO: next
+      # privacy_settings: 
+      streak_extended_today:
+        type: boolean
+      notify_activity_comment:
+        type: boolean
+      email_streak_saver:
+        type: boolean
+      requires_parental_consent:
+        type: boolean
+      trial_account:
+        type: boolean
+      push_passed:
+        type: boolean
+      notify_classroom_join:
+        type: boolean
+      notify_classroom_leave:
+        type: boolean
+      # TODO: next
+      # informant_reference:
+      notify_assignment:
+        type: boolean
+      push_schools_assignment:
+        type: boolean
+      gplus_id:
+        type: string
+      ui_language:
+        type: string
+      notify_stream_post:
+        type: boolean
+      fullname:
+        type: string
+      notify_pass:
+        type: boolean
+      notify_announcement:
+        type: boolean
+      push_early_bird:
+        type: boolean
+      upload-self-service:
+        type: boolean
+      has_observer:
+        type: boolean
+      tts_base_url_http:
+        type: string
+      creation_date:
+        type: string
+      push_streak_freeze_used:
+        type: boolean
+      push_activity_comment:
+        type: boolean
+      timezone:
+        type: string
+        example: Europe/Berlin
+      calendar:
+        type: array
+        items:
+          $ref: './language_data.yaml#/definitions/CalendarItem'
+      insite_sentence_edited:
+        type: boolean
+      id:
+        type: integer
+        example: 14397890
+      current_time:
+        type: integer
+        example: 1654847458585
+      push_leaderboards:
+        type: boolean
+      push_announcement:
+        type: boolean
+      ads_enabled:
+        type: boolean
+      change-design:
+        type: boolean
+      speaker:
+        type: boolean
+      created_dt:
+        type: integer
+        example: 1383394032000
+      is_self_observer:
+        type: boolean
+      #notif_event_ids:
+      #  type: array
+      notify_activity_reply:
+        type: boolean
+      push_stream_post:
+        type: boolean
+      email:
+        type: string
+        example: test@example.com
+      week_old_account:
+        type: boolean
+      avatar:
+        type: string
+        example: //simg-ssl.duolingo.com/avatars/14397890/tYbGH_JcRd
+      daily_goal:
+        type: integer
+        example: 30
+      email_promotion:
+        type: boolean
+      notify_schools_announcement:
+        type: boolean
+      #cohort:
+      #  type: string
+      timezone_offset:
+        type: string
+        example: "+0200"
+      microphone:
+        type: boolean
+      num_classrooms:
+        type: integer
+        example: 0
+      snooze_expiration_time:
+        type: integer
+        example: 0
+      notify_follow:
+        type: boolean
+      invite_url:
+        type: string
+        example: "https://invite.duolingo.com/BDHTZTB5CWWKTZIHPSKUUHCZM4"
+      #ab_options:
+      #  type: object
+      freeze-permissions:
+        type: boolean
+      is_observer:
+        type: boolean
+      notify_weekly_report:
+        type: boolean
+      delete-permissions:
+        type: boolean
+      notify_comment:
+        type: boolean
+      insite_immersion_lingots:
+        type: boolean
+      tts_base_url:
+        type: string
+        example: "https://tt.cloudfront.net/"
+      rupees:
+        type: integer
+        example: 21348
+      notify_weekly_progress_report:
+        type: boolean
+      notify_assignment_complete:
+        type: boolean
+      admin:
+        type: boolean
+      email_verified:
+        type: boolean
+      learning_language:
+        type: string
+        example: ko
+      push_happy_hour:
+        type: boolean
+      num_observees:
+        type: integer
+        example: 0
+      email_word_of_the_day:
+        type: boolean
+      notify_clubs:
+        type: boolean
+      push_promotion:
+        type: boolean
+      notify_schools_product_update:
+        type: boolean
+      notification_wechat_enabled:
+        type: boolean
+      autoplay:
+        type: boolean
+      push_streak_saver:
+        type: boolean
+      email_streak_freeze_used:
+        type: boolean
+
+  Intentory:
+    type: object
+    properties:
+      idioms_es:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      streak_freeze:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      timed_practice:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      idioms_fr:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      flirting_es:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      christmas_de:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      superhero_outfit:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      luxury_outfit:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      flirting_fr:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      streak_repair:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      formal_outfit:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      premium_subscription:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      idioms_de:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      flirting_de:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      society_streak_freeze:
+        type: string
+        example: "2017-04-08 21:48:10.579000"
+      gem_wager:
+        type: integer
+        example: 4
+
+  LastStreak:
+    type: object
+    properties:
+      shortened_product_id:
+        type: string
+        example: streak_12
+      is_available_for_repair:
+        type: boolean
+      google_play_product_id:
+        type: string
+        example: com.duolingo.purchase.streakrepair.12
+      product_id:
+        type: string
+        example: streak_12
+      days_ago:
+        type: integer
+        example: 0
+      length:
+        type: integer
+        example: 1975
+      last_reached_goal:
+        type: integer
+        example: 1654855200000
+
+  Language:
+    type: object
+    properties:
+      streak:
+        type: integer
+        example: 1975
+      language_string:
+        type: string
+        example: Greek
+      points:
+        type: integer
+        example: 0
+      learning:
+        type: boolean
+      language:
+        type: string
+        example: el
+      level:
+        type: integer
+        example: 1
+      current_learning:
+        type: boolean
+      sentences_translated:
+        type: integer
+        example: 0
+      to_next_level:
+        type: integer
+        example: 60
+
   User:
     properties:
       id:

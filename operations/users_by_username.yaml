@@ -1,0 +1,29 @@
+get:
+  tags: ["Users"]
+  operationId: getUserByYsername
+  summary: Returns user information by username
+  description: User information by username
+  parameters:
+    - in: path
+      name: username
+      required: true
+      type: string
+      minimum: 1
+      description: Username
+    - in: query
+      name: fields
+      type: array
+      items:
+        type: string
+      description: Fields to retrieve
+  responses:
+    200:
+      description: A User object.
+      schema:
+        $ref: "./definitions/user.yaml#/definitions/UserByUsername"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error
