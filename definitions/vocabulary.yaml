@@ -1,0 +1,146 @@
+definitions:
+  Vocabulary:
+    properties:
+      from_language:
+        type: string
+        example: en
+      language_string:
+        type: string
+        example: Spanish
+      learning_language:
+        type: string
+        example: es
+      language_information:
+        $ref: "#/definitions/LanguageInformation"
+      vocab_overview:
+        type: array
+        items:
+          $ref: "#/definitions/VocabularyOverviewItem"
+
+  VocabularyOverviewItem:
+    type: object
+    properties:
+      gender:
+        type: string
+        example: Masculine
+      id:
+        type: string
+        example: 2a5f9687f146bdb703ab03f7bedf2d3c
+      infinitive:
+        type: string
+        example: hacer
+      last_practiced:
+        type: string
+        example: 2022-06-17T20:19:36Z
+      last_practiced_ms:
+        type: integer
+        example: 1655497176000
+      lexeme_id:
+        type: string
+        example: 39007b3c41faaa99f950e934fe5429f8
+      normalized_string:
+        type: string
+        example: hacer
+      pos:
+        type: string
+        example: Verb
+      related_lexemes:
+        type: array
+        items:
+          type: string
+      skill:
+        type: string
+        example: Routines 2
+      skill_url_title:
+        type: string
+        example: Routines-2
+      strength:
+        type: number
+        format: double
+        example: 0.999986
+      strength_bars:
+        type: integer
+        example: 4
+      word_string:
+        type: string
+        example: hacer
+
+  LanguageInformation:
+    type: object
+    properties:
+      pronoun_mapping:
+        type: array
+        items:
+          $ref: "#/definitions/PronounMappingItem"
+      tenses:
+          $ref: "#/definitions/LanguageInformationTenses"
+
+  LanguageInformationTenses:
+    type: object
+    properties:
+      indicative:
+        type: array
+        items:
+          $ref: "#/definitions/LanguageInformationTense"
+      others:
+        type: array
+        items:
+          $ref: "#/definitions/LanguageInformationTense"
+      subjunctive:
+        type: array
+        items:
+          $ref: "#/definitions/LanguageInformationTense"
+
+  LanguageInformationTense:
+    type: object
+    properties:
+      tense_string:
+        type: string
+        example: Gerund
+      tense:
+        type: string
+        example: ger
+
+  PronounMappingItem:
+    type: object
+    properties:
+      pronoun:
+        type: string
+        example: yo
+      tenses:
+        $ref: "#/definitions/PronounMappingItemTenses"
+  
+  PronounMappingItemTenses:
+    type: object
+    properties:
+      cni:
+        type: string
+        example: conditional_indicative_first_person_plural
+      ger:
+        type: string
+        example: gerund
+      ifi:
+        type: string
+        example: preterite_indicative_first_person_plural
+      imp:
+        type: string
+        example: imperative_second_person_singular_tu
+      inf:
+        type: string
+        example: infinitive
+      pii:
+        type: string
+        example: copreterite_indicative_first_person_plural
+      pis:
+        type: string
+        example: preterite_subjunctive_first_person_plural
+      pp:
+        type: string
+        example: participle
+      pri:
+        type: string
+        example: present_indicative_first_person_plural
+      prs:
+        type: string
+        example: present_subjunctive_first_person_plural
+

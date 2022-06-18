@@ -23,6 +23,9 @@ security:
   - BearerAuth: []
 
 paths:
+  /vocabulary/overview:
+    $ref: "./operations/vocabulary_overview.yaml"
+    
   /2017-06-30/login:
     $ref: "./operations/login.yaml"
 

@@ -1,0 +1,358 @@
+definitions:
+  LanguageDataDict:
+    type: object
+    additionalProperties:
+      $ref: '#/definitions/LanguageData'
+
+  LanguageData:
+    type: object
+    properties:
+      streak:
+        type: integer
+        example: 1975
+      language_string:
+        type: string
+        example: Korean
+      level_progress:
+        type: integer
+        example: 367
+      first_time:
+        type: boolean
+      # TODO: missing sample
+      #bonus_rows:
+      #  type: array
+      fluency_score:
+        type: number
+        format: float
+        example: 0.0
+      push_practice:
+        type: boolean
+      max_section_index:
+        type: integer
+        example: 0
+      level_tests:
+        type: array
+        items:
+          $ref: '#/definitions/LevelTest'
+      direction_status:
+        type: string
+        example: released
+      next_level:
+        type: integer
+        example: 0
+      linkedin_share_url:
+        type: string
+        example: https://www.duolingo.com
+      notifications:
+        $ref: '#/definitions/Notifications'
+      # TODO: example is missing
+      # max_cefr_level:
+      notify_time:
+        type: integer
+        example: 780
+      notify_practice:
+        type: boolean
+      num_skills_learned:
+        type: integer
+        example: 4
+      calendar:
+        $ref: '#/definitions/CalendarItem'
+      can_transliterate:
+        type: boolean
+      level_left:
+        type: integer
+        example: 233
+      no_dep:
+        type: boolean
+      tracking_properties:
+        $ref: '#/definitions/TrackingProperties'
+      language_strength:
+        type: number
+        format: float
+        example: 1.0
+      next_lesson:
+        $ref: '#/definitions/NextLesson'
+      max_level:
+        type: boolean
+      level_percent:
+        type: integer
+        example: 61
+      language:
+        type: string
+        example: ko
+      level:
+        type: integer
+        example: 9
+      skills:
+        type: array
+        items:
+          $ref: '#/definitions/Skill'
+      # TODO: sample data
+      #bonus_skills:
+      #  type: array
+      level_points:
+        type: integer
+        example: 600
+      useSmartReminderTime:
+        type: boolean
+      max_depth_learned:
+        type: integer
+        example: 2
+      points:
+        type: integer
+        example: 2017
+      immersion_enabled:
+        type: boolean
+      placement_test:
+        $ref: '#/definitions/PlacementTest'
+      exempt_from_health:
+        type: boolean
+      max_tree_level:
+        type: integer
+        example: 3
+
+  PlacementTest:
+    type: object
+    properties:
+      attempts:
+        type: integer
+        example: 1
+
+  LevelTest:
+    type: object
+    properties:
+      index:
+        type: integer
+        example: 0
+      attempts:
+        type: integer
+        example: 3
+      completed:
+        type: boolean
+      level:
+        type: integer
+        example: 6
+      
+  Notifications:
+    type: object
+    properties:
+      chrome_app_ad:
+        type: boolean
+      net_promoter:
+        type: boolean
+      schools_2016_07_ad:
+        type: boolean
+
+  CalendarItem:
+    type: object
+    properties:
+      skill_id:
+        type: string
+        example: ab367af4584214cc1fb3bb63cd8a6136
+      improvement:
+        type: integer
+        example: 20
+      event_type:
+        type: string
+        example: lesson
+      datetime:
+        type: integer
+        example: 1653810257000
+
+  TrackingProperties:
+    type: object
+    properties:
+      direction:
+        type: string
+        example: ko<-en
+      latest_referring_domain:
+        type: string
+        example: www.duolingo.com
+      took_placementtest:
+        type: boolean
+      learning_language:
+        type: string
+        example: ko
+      utc_offset:
+        type: number
+        format: float
+        example: 2.0
+      unsafe_lexeme_restriction:
+        type: boolean
+      ui_language:
+        type: string
+        example: en
+      max_tree_level:
+        type: integer
+        example: 3
+      latest_referrer:
+        type: string
+        example: https://www.duolingo.com/
+  
+  NextLesson:
+    type: object
+    properties:
+      lesson_number:
+        type: integer
+        example: 4
+      skill_title:
+        type: string
+        example: Belongings
+      skill_url:
+        type: string
+        example: Belongings
+
+  Skill:
+    type: object
+    properties:
+      language_string:
+        type: string
+        example: Korean
+      dependencies_name:
+        type: array
+        items:
+          type: string
+      practice_recommended:
+        type: boolean
+      disabled:
+        type: boolean
+      test_count:
+        type: integer
+        example: 3
+      missing_lessons:
+        type: integer
+        example: 3
+      skill_progress:
+        $ref: '#/definitions/SkillProgress'
+      lesson:
+        type: boolean
+      has_explanation:
+        type: string
+      url_title:
+        type: string
+        example: Quotation
+      icon_color:
+        type: string
+        example: red
+      category:
+        type: string
+      num_lessons:
+        type: integer
+        example: 3
+      strength:
+        type: integer
+        example: 0
+      beginner:
+        type: boolean
+      title:
+        type: string
+        example: Indirect Quotation 1
+      num_levels:
+        type: integer
+        example: 6
+      coords_y:
+        type: integer
+        example: 37
+      coords_x:
+        type: integer
+        example: 1
+      progress_level_session_index:
+        type: integer
+        example: 0
+      id:
+        type: string
+        example: b3de0ee8a143650ff224a6b9721b054a
+      level_sessions_finished:
+        type: integer
+        example: 0
+      levels_finished:
+        type: integer
+        example: 0
+      test:
+        type: boolean
+      lesson_number:
+        type: integer
+        example: 1
+      learned:
+        type: boolean
+      num_translation_nodes:
+        type: integer
+        example: 0
+      # TODO: sample data
+      #achievements:
+      #  type: array
+      description:
+        type: string
+      index:
+        type: integer
+        example: 0
+      bonus:
+        type: boolean
+      locked:
+        type: boolean
+      explanation:
+        type: string
+        example: "<h3><strong>Native Korean Numbers</strong></h3>\n<p>Korean has two sets of numbers, <strong>Native Korean</strong> and <strong>Sino-Korean</strong>. Before that scares you away, let's take a closer look at Native Korean Numbers.</p>\n<h4><strong>Usage</strong></h4>\n<p>Native Korean numbers are used for numbering things, just as you would any number system. In contrast, Sino-Korean numbers are used in specific cases, such as dates, telephone numbers, addresses, and counting money.</p>\n<p>Native Korean can be used for counting as well. When taking pictures, you may hear Koreans say \"\ud558\ub098, \ub458, \uc14b!\" before snapping the photo.</p>\n<p>Native Korean has the numbers 1-10, then 11-19 simply combine 10 and the small number, so 11 would be \"ten-one.\" There are separate words for each of the tens, which are used to create compounds the same way that 10 is. </p>\n<p>Some of the tens are derived from their \"base\" as in English, \uc5ec\ub35f/eight=&gt; \uc5ec\ub4e0/eighty, but others have no obvious relationship.</p>\n<h4><strong>Irregulars</strong></h4>\n<p>Native Korean has five numbers that take a \"short\" form before a counter.</p>\n<table>\n<thead>\n<tr>\n<th>Number</th>\n<th>Base Form</th>\n<th>Short Form</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\ud558\ub098</td>\n<td>\ud55c</td>\n</tr>\n<tr>\n<td>2</td>\n<td>\ub458</td>\n<td>\ub450</td>\n</tr>\n<tr>\n<td>3</td>\n<td>\uc14b</td>\n<td>\uc138</td>\n</tr>\n<tr>\n<td>4</td>\n<td>\ub137</td>\n<td>\ub124</td>\n</tr>\n<tr>\n<td>20</td>\n<td>\uc2a4\ubb3c</td>\n<td>\uc2a4\ubb34</td>\n</tr>\n</tbody>\n</table>\n<h4><strong>Counters</strong></h4>\n<p>What are these <strong>counters</strong> we've mentioned? Think of words in English like paper or milk. Usually we cannot say \"a paper\" or \"a milk,\" except in some limited circumstances. We have to be specific, \"a sheet/piece/pack of paper\" or \"a cup/glass/carton/jug of milk.\" Now apply that to every noun in Korean.</p>\n<p>The most common counter is \uac1c and can be used in most situations. As a non-native Korean speaker, you can often get away with using \uac1c in cases where Koreans would use a specific counter. Exceptions include \uba85 for people, \ub9c8\ub9ac for animals, and some food terms where more specificity is required.</p>\n<p>The general usage is Noun+Number+Counter+Particle in a sentence. </p>\n<ul>\n<li>\uc0ac\ub78c \ud55c \uba85\uc774 \uc788\uc5b4\uc694=There is one person</li>\n</ul>\n<p>Particles can sometimes be attached to the noun instead of the counter.</p>\n<p>Usually in writing the number and counter are written separately, with a space, but without a space when using a numeral (\ub450 \uba85 vs 2\uba85).</p>\n<p>Other word orders are also possible in some circumstances, but less popular:</p>\n<ul>\n<li>\n<p>Number+Noun (\ud55c \uc0ac\ub78c)</p>\n</li>\n<li>\n<p>Number+Counter+\uc758+Noun (\ud55c \uba85\uc758 \uc0ac\ub78c)</p>\n</li>\n<li>\n<p>Noun+Number (\uc0ac\ub78c \ud558\ub098)</p>\n</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Counter</th>\n<th>Nouns</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>\uac1c</td>\n<td>General counter</td>\n</tr>\n<tr>\n<td>\uba85</td>\n<td>People</td>\n</tr>\n<tr>\n<td>\uc0b4</td>\n<td>Age</td>\n</tr>\n<tr>\n<td>\ub9c8\ub9ac</td>\n<td>Animals</td>\n</tr>\n<tr>\n<td>\uc790\ub8e8</td>\n<td>Long thing things</td>\n</tr>\n<tr>\n<td>\ub300</td>\n<td>Machines/cars</td>\n</tr>\n</tbody>\n</table>\n<h4><strong>Age</strong></h4>\n<p>Age in Korean is marked with the counter \uc0b4. \n\uc800\ub294 \uc2a4\ubb34 \uc0b4\uc774\uc5d0\uc694=I am twenty</p>\n<p>In Korea, age is calculated differently than in most other countries. It is based on the traditional Asian lunar cycle. A baby is one when it is born and turns two on New Year's Day. Depending on who you are talking to, this may be either January 1st or Lunar New Year. Therefore, most of us are 1 or 2 years older in Korea than we are at home.</p>\n<h4><strong>Large Numbers</strong></h4>\n<p>Although Native Korean was the original number system, it now only goes up to 99 in regular language. Larger numbers are said in Sino-Korean except in some more academic cases, mostly poetry, as the large Native Korean numbers are fairly archaic.</p>\n<p>For these numbers of 100, some people may mix the two forms. 150, for example, could be said with 100 in Sino-Korean and 50 in Native Korean. This is more common in speaking than in writing.</p>\n<p>It is not uncommon for numbers over 19 to be said in Sino-Korean, especially by children who do not yet have the trickier Native Korean digits memorized.</p>\n<table>\n<thead>\n<tr>\n<th>Number</th>\n<th>Native Korean</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>10</td>\n<td>\uc5f4</td>\n</tr>\n<tr>\n<td>20</td>\n<td>\uc2a4\ubb3c</td>\n</tr>\n<tr>\n<td>30</td>\n<td>\uc11c\ub978</td>\n</tr>\n<tr>\n<td>40</td>\n<td>\ub9c8\ud754</td>\n</tr>\n<tr>\n<td>50</td>\n<td>\uc270</td>\n</tr>\n<tr>\n<td>60</td>\n<td>\uc608\uc21c</td>\n</tr>\n<tr>\n<td>70</td>\n<td>\uc77c\ud754</td>\n</tr>\n<tr>\n<td>80</td>\n<td>\uc5ec\ub4e0</td>\n</tr>\n<tr>\n<td>90</td>\n<td>\uc544\ud754</td>\n</tr>\n</tbody>\n</table>\n<h4><strong>Ordinal Numbers</strong></h4>\n<p>Ordinal Numbers (first, second, third) are created by combining the Native Korean number with \ubc88\uc9f8. This uses the short form for those numbers that have one, except for 1, which uses \uccab instead of \ud55c, giving us \uccab \ubc88\uc9f8 for \"first.\"</p>\n<h4><strong>Roots</strong></h4>\n<ul>\n<li>\uba85 - name (\u540d)</li>\n</ul>"
+      num_lexemes:
+        type: integer
+        example: 21
+      num_missing:
+        type: integer
+        example: 21
+      # TODO: sample data
+      # comment_data:
+      dependencies:
+        type: array
+        items:
+          type: string
+      known_lexemes:
+        type: array
+        items:
+          type: string
+          example:
+          - 4ed12bd7fbaf821182a32a1822971ce3
+          - 8848fe62ccc44f69b54aae32f5c860c3
+      words:
+        type: array
+        items:
+          type: string
+      num_sessions_for_level:
+        type: integer
+        example: 3
+      # todo: sample data
+      #path:
+      #  type: array
+      strength_no_disabled_no_character:
+        type: integer
+        example: 0
+      strength_no_disabled:
+        type: integer
+        example: 0
+      short:
+        type: string
+        example: Quote 1
+      grammar:
+        type: boolean
+      name:
+        type: string
+        example: Indirect Quotation
+      language:
+        type: string
+        example: ko
+      is_new_grammar:
+        type: boolean
+      new_index:
+        type: integer
+        example: 52
+      progress_percent:
+        type: integer
+        example: 0
+      mastered:
+        type: boolean
+
+  SkillProgress:
+    type: object
+    properties:
+      level:
+        type: integer
+        example: 0

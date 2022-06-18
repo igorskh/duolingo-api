@@ -1,0 +1,21 @@
+get:
+  tags: ["Vocabulary"]
+  operationId: getVocabularyOverview
+  summary: Returns vocabulary
+  description: User's vocabulary
+  parameters:
+    - in: query
+      name: _
+      required: true
+      type: integer
+  responses:
+    200:
+      description: A vocabulary object.
+      schema:
+        $ref: "./definitions/vocabulary.yaml#/definitions/Vocabulary"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error
