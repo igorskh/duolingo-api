@@ -6,9 +6,10 @@
     "scripts": {
         "test": "npm run-script merge && npx swagger validate complete-swagger-main.yaml && npx swagger validate complete-swagger-friends.yaml && npx swagger validate complete-swagger-leaderboards.yaml",
         "merge": "node merge.js",
-        "redoc": "./redoc.sh",
+        "redoc-ci": "chmod +x ./redoc.sh && ./redoc.sh",
+        "redoc": "@redocly preview-docs complete-swagger-main.yaml",
         "mock": "prism mock swagger-complete.yaml",
-        "build": "npm run-script merge && npm run-script redoc"
+        "build": "npm run-script merge && npm run-script redoc-ci"
     },
     "repository": {
         "type": "git",
@@ -18,6 +19,7 @@
     "license": "MIT",
     "homepage": "https://github.com/igorskh/duolingo-api",
     "dependencies": {
+        "@redocly/cli": "^1.0.0-beta.102",
         "@stoplight/prism-cli": "^4.7.0",
         "redoc-cli": "^0.13.7",
         "swagger-cli": "^4.0.4",
