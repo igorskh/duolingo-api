@@ -1,0 +1,35 @@
+get:
+  tags: ["Mistakes"]
+  operationId: getMistakesCount
+  summary: Returns mistakes count
+  description: Mistakes count
+  parameters:
+    - in: query
+      name: includeListening
+      type: boolean
+      description: Include Listening
+    - in: query
+      name: includeSpeaking
+      type: boolean
+      description: Include Speaking
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      description: UserID
+    - in: path
+      name: courseID
+      required: true
+      type: string
+      description: CourseID
+  responses:
+    200:
+      description: Mistakes count response.
+      schema:
+        type: object
+        properties:
+          numberMistakes:
+            type: integer
+            example: 49
+    default:
+      description: Unexpected error

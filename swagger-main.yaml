@@ -32,7 +32,23 @@ paths:
   /users/{username}:
     $ref: "./operations/users_by_username.yaml"
 
+  /v2/mistakes/users/{userID}/courses/{courseID}/count:
+    $ref: "./operations/count_mistakes.yaml"
+
   /2017-06-30/users/{userID}:
+    parameters:
+      - in: path
+        name: userID
+        required: true
+        type: integer
+        minimum: 1
+        description: User ID
+      - in: query
+        name: fields
+        type: array
+        items:
+          type: string
+        description: Fields to retrieve
     $ref: "./operations/users_logged.yaml"
 
   /2017-06-30/users:

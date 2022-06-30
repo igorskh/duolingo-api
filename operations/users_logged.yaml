@@ -1,21 +1,35 @@
+patch:
+  tags: ["Users"]
+  operationId: setLanguage
+  summary: Set User Language
+  description: Set User Language/Course
+  consumes:
+    - application/json
+  parameters:
+    - in: body
+      name: setLanguageRequest
+      description: The user to create.
+      schema:
+        type: object
+        properties:
+          courseId:
+            type: string
+            example: DUOLINGO_KO_EN
+          fromLanguage:
+            type: string
+            example: en
+          learningLanguage:
+            type: string
+            example: ko
+  responses:
+    200:
+      description: An empty object
+
 get:
   tags: ["Users"]
   operationId: getUser
   summary: Returns user information.
   description: User information.
-  parameters:
-    - in: path
-      name: userID
-      required: true
-      type: integer
-      minimum: 1
-      description: User ID
-    - in: query
-      name: fields
-      type: array
-      items:
-        type: string
-      description: Fields to retrieve
   responses:
     200:
       description: A User object.
