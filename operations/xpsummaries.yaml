@@ -4,12 +4,6 @@ get:
   summary: Returns user XP summaries
   description: User summaries.
   parameters:
-    - in: query
-      name: timezone
-      required: true
-      type: string
-      minimum: 1
-      description: Time zone
     - in: path
       name: userID
       required: true
