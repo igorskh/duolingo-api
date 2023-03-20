@@ -20,7 +20,7 @@
     "homepage": "https://github.com/igorskh/duolingo-api",
     "dependencies": {
         "@redocly/cli": "^1.0.0-beta.102",
-        "@stoplight/prism-cli": "^4.10.2",
+        "@stoplight/prism-cli": "^4.11.1",
         "redoc-cli": "^0.13.7",
         "swagger-cli": "^4.0.4",
         "swagger-merger": "^1.5.4"
