@@ -6,6 +6,6 @@ FILES="complete-swagger-*.yaml"
 for f in $FILES
 do
     echo "Processing $f file..."
-    npx redoc-cli bundle $f
+    npx @redocly/cli build-docs $f
     mv redoc-static.html public/$f.html
 done

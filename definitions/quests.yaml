@@ -1,0 +1,35 @@
+definitions:
+  Quest:
+    properties:
+      goalCategory:
+        type: string
+      goalId:
+        type: string
+      questThreshold:
+        type: integer
+      questState:
+        type: string
+      questPoints:
+        type: integer
+      questId:
+        type: string
+
+  QuestParticipant:
+    properties:
+      avatarUrl:
+        type: string
+      displayName:
+        type: string
+      userId:
+        type: string
+      historicalStats:
+        type: array
+        items:
+          $ref: "#/definitions/QuestHistoricalStat"
+    
+  QuestHistoricalStat:
+    properties:
+      goalCategory:
+        type: string
+      streak:
+        type: integer

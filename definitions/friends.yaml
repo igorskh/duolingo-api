@@ -1,0 +1,60 @@
+definitions:
+  FriendsMatchesResponse:
+    properties:
+      FriendsStreak:
+        $ref: "#/definitions/FriendsStreak"
+
+  FriendsStreak:
+    properties:
+      emptySlots:
+        type: integer
+      confirmedMatches:
+        type: array
+        items:
+          $ref: "#/definitions/FriendsStreakMatch"
+      endedConfirmedMatches:
+        type: array
+        items:
+          $ref: "#/definitions/FriendsStreakMatch"
+      pendingMatches:
+        type: array
+        items:
+          $ref: "#/definitions/FriendsStreakMatch"
+
+  FriendsStreakMatch:
+    properties:
+      confirmId:
+        type: string
+      confirmTimestamp:
+        type: integer
+      endTimestamp:
+        type: integer
+      initiatedByStranger:
+        type: boolean
+      inviteTimestamp:
+        type: integer
+      # lastMatchRepair:
+      #   type: integer
+      matchHistoryCount:
+        type: integer
+      matchId:
+        type: string
+      usersInMatch:
+        type: array
+        items:
+          $ref: "#/definitions/UserInMatch"
+      
+  UserInMatch:
+    properties:
+      hasAcknowledgedConfirm:
+        type: boolean
+      hasAcknowledgedEnd:
+        type: boolean
+      isConfirmed:
+        type: boolean
+      name:
+        type: string
+      picture:
+        type: string
+      userId:
+        type: integer
