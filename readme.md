@@ -9,7 +9,7 @@ The validation and codegen was tested for Golang with [go-swagger](https://githu
 
 Code generation for other languages is possible with official [swagger-codegen](https://github.com/swagger-api/swagger-codegen).
 
-Check out [interactive documentation](https://duolingo-api.roundeasy.now.sh/).
+Check out [interactive documentation](https://duolingo-api.vercel.app/).
 
 ## Validate and Generate Server/Client Code
 Validate documentation:
