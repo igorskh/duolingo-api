@@ -25,3 +25,9 @@ definitions:
         type: integer
       repaired:
         type: boolean
+      shielded:
+        type: boolean
+      totalSessionTime:
+        type: integer
+      numSessions:
+        type: integer

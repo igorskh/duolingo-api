@@ -51,6 +51,9 @@ paths:
         description: Fields to retrieve
     $ref: "./operations/users_logged.yaml"
 
+  /2017-06-30/friends/{userID}/matches:
+    $ref: "./operations/friends_matches.yaml"
+
   /2017-06-30/users:
     $ref: "./operations/users_not_logged.yaml"
 

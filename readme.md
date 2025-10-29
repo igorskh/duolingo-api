@@ -34,10 +34,21 @@ See more documentation for Go swagger on [https://goswagger.io](https://goswagge
 Generate interactive documentation with [Redoc](https://github.com/Redocly/redoc):
 ```bash
 npx swagger-merger -i swagger.yaml -o swagger-complete.yaml
-npx redoc-cli bundle swagger-complete.yaml
+npx @redocly/cli build-docs swagger-complete.yaml
 ```
 
 Usage of `swagger-merger` is required, because paths references are not resolved correctly with some third-party tools for swagger.
+
+### Build all documentation files
+On Windows:
+```powershell
+powershell -ExecutionPolicy Bypass -File .\redoc.ps1
+```
+
+On Linux/MacOS:
+```bash
+./redoc.sh
+```
 
 ## Mock Server with Prism
 For mocking purpose [Prism](https://stoplight.io/open-source/prism/) is used:

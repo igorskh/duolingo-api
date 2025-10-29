@@ -1,0 +1,28 @@
+get:
+  tags: ["Friends"]
+  operationId: getFriendsMatches
+  summary: Returns friends matches
+  description: Friends matches for a user
+  parameters:
+    - in: query
+      name: activityName
+      type: string
+      description: Activity name
+      example: friendsStreak
+    - in: path
+      name: userID
+      required: true
+      type: integer
+      minimum: 1
+      description: UserID
+  responses:
+    200:
+      description: A friends matches response.
+      schema:
+        $ref: "./definitions/friends.yaml#/definitions/FriendsMatchesResponse"
+    400:
+      description: The specified user ID is invalid (e.g. not a number).
+    404:
+      description: A user with the specified ID was not found.
+    default:
+      description: Unexpected error

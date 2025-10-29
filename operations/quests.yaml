@@ -1,0 +1,16 @@
+get:
+  tags: ["Quests"]
+  operationId: getQuests
+  summary: Returns user quests.
+  description: User quests
+  responses:
+    200:
+      description: A user quests object.
+      schema:
+        type: array
+        items:
+          $ref: "../definitions/quests.yaml#/definitions/Quest"
+    400:
+      description: Bad request
+    default:
+      description: Unexpected error

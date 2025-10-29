@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  title: Duolingo Unofficial API (Goals)
+  description: Unofficial API description for Duolingo.
+  version: 1.0.0
+host: goals-api.duolingo.com
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+
+securityDefinitions:
+  BearerAuth:
+    type: apiKey
+    name: Authorization
+    in: header
+
+security:
+  - BearerAuth: []
+
+paths:
+  /quests:
+    $ref: "./operations/quests.yaml"
